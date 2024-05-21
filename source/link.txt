@@ -1,0 +1,38 @@
+Aruco using OpenCV on Raspberry Pi: 
+	https://www.youtube.com/watch?v=mBOfx-wRB2Q
+
+
+Đề tài ứng dụng tạo mã và nhận diện mã trên thiết bị di động 
+	https://github.com/truonganhhoang/int3507-2017/tree/master/Nhom%2011%20OpenCV
+
+
+PRECISION LANDING | with OPENCV and ARUCO Markers | Part 1
+	https://www.youtube.com/watch?v=wlT_0fhGrGg
+
+
+Generate ArUco Markers for Detection and Pose Estimation with OpenCV in Python
+	https://www.youtube.com/watch?v=sg1bVJBjbng&t=2s
+
+
+Building an Augmented Reality Application with ArUco Marker Pose Estimation in OpenCV
+	https://www.youtube.com/watch?v=GEWoGDdjlSc&t=87s
+
+
+
+calib camera 
+	https://github.com/tizianofiorenzani/how_do_drones_work/tree/master/opencv
+	http://tailieuso.udn.vn/bitstream/TTHL_125/4266/2/Tomtat.pdf
+
+
+
+Aruco marker-based OpenCV distance measurement
+	https://www.youtube.com/watch?v=xzG2jQfxLlY
+
+
+
+Distance Measurement With a Stereo Camera using Python and OpenCV
+	https://www.youtube.com/watch?v=xjx4mbZXaNc
+
+
+OpenCV là gì
+	https://teky.edu.vn/blog/opencv-la-gi/
