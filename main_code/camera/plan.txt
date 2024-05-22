@@ -4,8 +4,20 @@ viết chương trình test xem điểm áp dụng nhân ma trận nghịch đ�
 	+ Hiện tại đã có chương trình cho phép xác nhận tọa độ với ảnh biên và chương trình cho phép biến đổi phối cảnh.
 	+ Chuyển chương trình biến đổi phối cảnh để có thể hướng đối tượng đến
 	+ kết hợp 2 chương trình
+--------------------------------CHECK-----------------------------------------------------------
 
+kiểm tra tiếp với tỷ lệ pixel/mm có áp dụng được không
+- phương pháp: xác định được kích thước thực tế của hình chữ nhật tạo bởi 4 marker, xác định số pixel theo các cạnh của ảnh mới, lấy tỉ lệ, xác định một điểm trong ảnh, điểm này có kích thước theo mm ngoài thực tế đã được xác định, kiểm tra xem tọa độ điểm trên ảnh mới theo mm có gần đúng với tọa độ ngoài thực tế không
+- Yêu cầu: 	+ Có ảnh có kích thước marker và khoảng cách được xác định gần chính xác nhất có thể (CHECK)
+	 	+ Chương trình đã có thể xác định điểm với tọa độ pixel gần đúng.
+- Thực hiện chương trình:
+	+ Xác định độ dài 2 cạnh vùng hoạt động (khoảng cách giữa 2 marker).
+	+ xác định được khoảng cách pixel (theo chương trình)
+	+ lấy tỉ lệ giữa các cặp cạnh, Lấy tỉ lệ giữa diện tích.
+	+ xác định tọa độ điểm mới theo mm,, so sánh với tọa độ thực tế (mm)
 
-Nếu đúng, kiểm tra tiếp với tiếp tỷ lệ pixel/mm có áp dụng được không
-- phương pháp:  
+----------------------------------LOADING---------------------------------------------------------
+
+nếu Đúng, xem xét với trường hợp xác định tọa độ xe với line theo pixel, và góc được lấy từ aruco pose
+
  
