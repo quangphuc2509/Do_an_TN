@@ -153,7 +153,7 @@ if __name__ == "__main__":
     root.title("Image Resizer with Fixed Frame")
     root.state('zoomed')
     
-    url = r"F:\DATN_HK2_2024\camera_img\line9.jpg"
+    url = r"F:\DATN_HK2_2024\camera_img\linearuco.jpg"
     image = cv2.imread(url)
     app = main_GUI(root, image)
     root.mainloop()

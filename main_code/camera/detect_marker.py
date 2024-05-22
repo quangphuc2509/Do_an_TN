@@ -169,6 +169,7 @@ def four_point_transform(video_frame, center_corner):
     
     # tính toán ma trận chiếu phối cảnh
     Matrix_perspective = cv2.getPerspectiveTransform(rect, dst)
+    print(f"Matrix_perspective: {Matrix_perspective}")
     Img_warpPerspective = cv2.warpPerspective(video_frame, Matrix_perspective, (width_max, height_max))
     
     return Img_warpPerspective 
