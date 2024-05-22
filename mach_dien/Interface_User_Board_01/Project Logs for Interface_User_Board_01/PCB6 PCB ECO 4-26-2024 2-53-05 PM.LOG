@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=Den_Run Pin=P1-11
+Removed Pin From Net: NetName=Den_Stop Pin=P1-13
+Removed Pin From Net: NetName=Var Pin=P1-14
+Change Component Designator: OldDesignator=LED_SUPPLY NewDesignator=L1
+Change Component Designator: OldDesignator=RUN NewDesignator=L2
+Change Component Designator: OldDesignator=Start NewDesignator=BT1
+Change Component Designator: OldDesignator=Stop NewDesignator=BT2
+Change Component Designator: OldDesignator=STOP NewDesignator=L3
+Change Component Designator: OldDesignator=User NewDesignator=BT3
+Change Component Designator: OldDesignator=WARN NewDesignator=L4
+Added Pin To Net: NetName=Var Pin=P1-11
+Added Pin To Net: NetName=Den_Stop Pin=P1-14
+Added Pin To Net: NetName=Den_Run Pin=P1-16
+Added Member To Class: ClassName=Sheet7 Member=Component C1 103
+Added Member To Class: ClassName=Sheet7 Member=Component C2 103
+Added Member To Class: ClassName=Sheet7 Member=Component C3 103
+Added Member To Class: ClassName=Sheet7 Member=Component L3 LED 5mm
+Added Room: Name=Sheet7

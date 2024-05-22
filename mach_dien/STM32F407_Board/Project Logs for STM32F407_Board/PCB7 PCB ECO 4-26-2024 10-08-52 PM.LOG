@@ -1,0 +1,7 @@
+Added Pin To Net: NetName=NetC8_2 Pin=C8-2
+Added Pin To Net: NetName=NetC8_2 Pin=Y1-2
+Added Net: Name=NetC8_2
+Added Pin To Net: NetName=Reset Pin=R7-2
+Added Pin To Net: NetName=Reset Pin=U1-14
+Added Net: Name=Reset
+Added Room: Name=Sheet5

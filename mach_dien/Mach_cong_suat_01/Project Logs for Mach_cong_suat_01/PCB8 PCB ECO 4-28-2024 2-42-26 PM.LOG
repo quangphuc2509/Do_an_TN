@@ -1,0 +1,29 @@
+Added Component: Designator=D?(TO254P1050X476X2020-3)
+Add component (AddParameter): Name = "Availability"; Value = "Not in stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/MBR10100CTH/Taiwan+Semiconductor/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Taiwan Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "MBR10100CTH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "TO-220AB Taiwan Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/MBR10100CTH/Taiwan+Semiconductor/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D(DIOM5226X240N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Diodes Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "B340A-13-F"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "DO-214 Diodes Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/B340A-13-F/Diodes%20Inc./view-part/78704/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=D-A
+Added Pin To Net: NetName=GND Pin=D?-1
+Added Pin To Net: NetName=NetD?_2 Pin=D?-2
+Added Pin To Net: NetName=NetD?_2 Pin=J1-3
+Added Pin To Net: NetName=NetD?_2 Pin=L1-1
+Added Net: Name=NetD?_2
+Added Pin To Net: NetName=NetD_C Pin=D-C
+Added Pin To Net: NetName=NetD_C Pin=L2-1
+Added Pin To Net: NetName=NetD_C Pin=VR1-2
+Added Net: Name=NetD_C
+Added Member To Class: ClassName=Sheet6 Member=Component D? MBR10100CTH
+Added Member To Class: ClassName=Sheet6 Member=Component D B340A-13-F

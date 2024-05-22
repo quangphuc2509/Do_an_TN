@@ -1,0 +1,39 @@
+Removed Pin From Net: NetName=VCC Pin=Encod_R-1
+Removed Pin From Net: NetName=GND Pin=Encod_R-2
+Removed Pin From Net: NetName=Encoder_R1 Pin=Encod_R-3
+Removed Pin From Net: NetName=Encoder_R2 Pin=Encod_R-4
+Removed Pin From Net: NetName=Encoder_L1 Pin=Encod_R?-3
+Removed Pin From Net: NetName=Encoder_L2 Pin=Encod_R?-4
+Removed Member From Class: ClassName=Sheet5 Member=Encod_R
+Change Component Designator: OldDesignator=Encod_R? NewDesignator=Encod_L
+Change Component Designator: OldDesignator=IC1 NewDesignator=Input
+Added Component: Designator=Output(PCBComponent_1)
+Added Pin To Net: NetName=VCC Pin=Output-1
+Added Pin To Net: NetName=VCC Pin=Output-1
+Added Pin To Net: NetName=VCC Pin=Output-1
+Added Pin To Net: NetName=VCC Pin=Output-1
+Added Pin To Net: NetName=VCC Pin=Output-1
+Added Pin To Net: NetName=GND Pin=Output-2
+Added Pin To Net: NetName=Encoder_R1 Pin=Output-11
+Added Pin To Net: NetName=Encoder_R2 Pin=Output-12
+Added Pin To Net: NetName=Encoder_L1 Pin=Output-13
+Added Pin To Net: NetName=Encoder_L2 Pin=Output-14
+Added Pin To Net: NetName=Buzzer Pin=Input-17
+Added Net: Name=Buzzer
+Added Pin To Net: NetName=IN_L1 Pin=Output-17
+Added Net: Name=IN_L1
+Added Pin To Net: NetName=IN_L2 Pin=Output-18
+Added Net: Name=IN_L2
+Added Pin To Net: NetName=IN_R1 Pin=Output-15
+Added Net: Name=IN_R1
+Added Pin To Net: NetName=IN_R2 Pin=Output-16
+Added Net: Name=IN_R2
+Added Pin To Net: NetName=PWML Pin=Output-20
+Added Net: Name=PWML
+Added Pin To Net: NetName=PWMR Pin=Output-19
+Added Net: Name=PWMR
+Added Pin To Net: NetName=RX_HC05 Pin=Input-18
+Added Net: Name=RX_HC05
+Added Pin To Net: NetName=TX_HC05 Pin=Input-19
+Added Net: Name=TX_HC05
+Added Member To Class: ClassName=Sheet5 Member=Component Output Component_1

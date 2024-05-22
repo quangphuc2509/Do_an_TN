@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=VCC Pin=HC05-2
+Removed Pin From Net: NetName=GND Pin=HC05-3
+Removed Pin From Net: NetName=RX_HC05 Pin=HC05-4
+Removed Pin From Net: NetName=TX_HC05 Pin=HC05-5
+Removed Member From Class: ClassName=Sheet7 Member=HC05
+Added Component: Designator=IC2(PCBComponent_1)
+Added Pin To Net: NetName=VCC Pin=IC2-2
+Added Pin To Net: NetName=GND Pin=IC2-3
+Added Pin To Net: NetName=RX_HC05 Pin=IC2-4
+Added Pin To Net: NetName=TX_HC05 Pin=IC2-5
+Added Member To Class: ClassName=Sheet7 Member=Component IC2 HC05
+Added Room: Name=Sheet7

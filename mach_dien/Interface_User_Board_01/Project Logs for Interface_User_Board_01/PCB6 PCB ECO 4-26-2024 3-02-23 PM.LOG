@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=SCL_Oled Pin=P1-1
+Removed Pin From Net: NetName=SDA_Oled Pin=P1-3
+Removed Pin From Net: NetName=DIN Pin=P1-5
+Removed Pin From Net: NetName=CS Pin=P1-7
+Removed Pin From Net: NetName=CLK Pin=P1-9
+Added Pin To Net: NetName=DIN Pin=P1-1
+Added Pin To Net: NetName=CS Pin=P1-3
+Added Pin To Net: NetName=CLK Pin=P1-5
+Added Pin To Net: NetName=SDA_Oled Pin=P1-7
+Added Pin To Net: NetName=SCL_Oled Pin=P1-9
+Added Room: Name=Sheet7

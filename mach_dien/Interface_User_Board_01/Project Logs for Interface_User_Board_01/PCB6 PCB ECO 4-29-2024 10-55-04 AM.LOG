@@ -1,0 +1,5 @@
+Added Component: Designator=BZZ1(BUZZER_12.0X8.5MM)
+Added Pin To Net: NetName=Buzzer Pin=BZZ1-1
+Added Pin To Net: NetName=GND Pin=BZZ1-2
+Added Member To Class: ClassName=Sheet7 Member=Component BZZ1 Buzzer
+Added Room: Name=Sheet7

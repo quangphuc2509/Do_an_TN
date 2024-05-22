@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=NetD1_1 Pin=F1-2
+Removed Pin From Net: NetName=Pin_24V Pin=SW1-3
+Removed Member From Class: ClassName=Sheet6 Member=F1
+Removed Member From Class: ClassName=Sheet6 Member=SW1
+Added Component: Designator=F?(Auto_Fuse)
+Added Pin To Net: NetName=Pin_24V Pin=F?-1
+Added Pin To Net: NetName=NetD1_1 Pin=F?-2
+Added Member To Class: ClassName=Sheet6 Member=Component F? 10A 16V
+Added Room: Name=Sheet6

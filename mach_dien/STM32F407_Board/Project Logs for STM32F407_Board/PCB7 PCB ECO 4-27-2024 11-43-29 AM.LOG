@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=Den_Stop Pin=P1-1
+Added Pin To Net: NetName=Den_Run Pin=P1-2
+Added Pin To Net: NetName=Den_Warning Pin=P1-4
+Added Room: Name=Sheet5

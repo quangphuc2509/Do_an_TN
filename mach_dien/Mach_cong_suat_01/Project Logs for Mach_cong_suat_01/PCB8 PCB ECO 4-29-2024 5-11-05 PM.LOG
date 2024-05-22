@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=MR1 Pin=U1-2
+Removed Pin From Net: NetName=MR2 Pin=U1-10
+Change Component Footprint: Designator=U1 Old Footprint=TO170P2027X462X2082-11 New Footprint=LMD18200
+Added Room: Name=Sheet6

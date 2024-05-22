@@ -1,0 +1,83 @@
+Removed Member From Class: ClassName=Sheet5 Member=OPTO1
+Change Component Designator: OldDesignator=C1 NewDesignator=C5
+Change Component Designator: OldDesignator=C2 NewDesignator=C6
+Change Component Designator: OldDesignator=C3 NewDesignator=C7
+Change Component Designator: OldDesignator=C4 NewDesignator=C8
+Change Component Designator: OldDesignator=C5 NewDesignator=C9
+Change Component Designator: OldDesignator=C6 NewDesignator=C10
+Change Component Designator: OldDesignator=C7 NewDesignator=C13
+Change Component Designator: OldDesignator=C8 NewDesignator=C11
+Change Component Designator: OldDesignator=C9 NewDesignator=C12
+Change Component Designator: OldDesignator=P3 NewDesignator=P4
+Change Component Designator: OldDesignator=P4 NewDesignator=P3
+Change Component Designator: OldDesignator=P5 NewDesignator=P6
+Change Component Designator: OldDesignator=P6 NewDesignator=P5
+Change Component Designator: OldDesignator=U1 NewDesignator=U2
+Change Component Designator: OldDesignator=U2 NewDesignator=U1
+Added Component: Designator=C1(tu 0805)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "Dán"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH004551"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "So_Chan"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "T? 0805 104-100nF 10% 50V"; VariantName = "[No Variations]"
+Added Component: Designator=C2(tu 0805)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "Dán"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH004551"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "So_Chan"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "T? 0805 104-100nF 10% 50V"; VariantName = "[No Variations]"
+Added Component: Designator=C3(tu 0805)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "Dán"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH004551"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "So_Chan"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "T? 0805 104-100nF 10% 50V"; VariantName = "[No Variations]"
+Added Component: Designator=C4(tu 0805)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "Dán"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH004551"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "So_Chan"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "T? 0805 104-100nF 10% 50V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+3.3 VDK Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=+3.3 VDK Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=+3.3 VDK Pin=C3-1
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=+3.3 VDK Pin=C4-1
+Added Pin To Net: NetName=GND Pin=C4-2
+Change Net Name : Old Net Name=NetC2_1 New Net Name=NetC6_1
+Change Net Name : Old Net Name=NetC3_1 New Net Name=NetC7_1
+Change Net Name : Old Net Name=NetC6_1 New Net Name=NetC10_1
+Change Net Name : Old Net Name=NetC8_1 New Net Name=NetC11_1
+Change Net Name : Old Net Name=NetC8_2 New Net Name=NetC11_2
+Change Net Name : Old Net Name=NetC9_1 New Net Name=NetC12_1
+Change Net Name : Old Net Name=NetC9_2 New Net Name=NetC12_2
+Change Net Name : Old Net Name=NetP5_2 New Net Name=NetP6_2
+Change Net Name : Old Net Name=NetP5_3 New Net Name=NetP6_3
+Change Net Name : Old Net Name=NetP5_4 New Net Name=NetP6_4
+Change Net Name : Old Net Name=NetP5_5 New Net Name=NetP6_5
+Change Net Name : Old Net Name=NetP5_6 New Net Name=NetP6_6
+Change Net Name : Old Net Name=NetP5_7 New Net Name=NetP6_7
+Change Net Name : Old Net Name=NetP5_8 New Net Name=NetP6_8
+Change Net Name : Old Net Name=NetP5_9 New Net Name=NetP6_9
+Change Net Name : Old Net Name=NetP5_10 New Net Name=NetP6_10
+Change Net Name : Old Net Name=NetP5_11 New Net Name=NetP6_11
+Change Net Name : Old Net Name=NetP5_12 New Net Name=NetP6_12
+Change Net Name : Old Net Name=NetP5_13 New Net Name=NetP6_13
+Change Net Name : Old Net Name=NetP5_14 New Net Name=NetP6_14
+Change Net Name : Old Net Name=NetP5_15 New Net Name=NetP6_15
+Change Net Name : Old Net Name=NetP5_16 New Net Name=NetP6_16
+Change Net Name : Old Net Name=NetP5_17 New Net Name=NetP6_17
+Change Net Name : Old Net Name=NetP5_18 New Net Name=NetP6_18
+Change Net Name : Old Net Name=NetP5_19 New Net Name=NetP6_19
+Change Net Name : Old Net Name=NetP5_20 New Net Name=NetP6_20
+Added Member To Class: ClassName=Sheet5 Member=Component C10 103
+Added Member To Class: ClassName=Sheet5 Member=Component C11 104
+Added Member To Class: ClassName=Sheet5 Member=Component C12 104
+Added Member To Class: ClassName=Sheet5 Member=Component C13 104
+Added Room: Name=Sheet5

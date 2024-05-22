@@ -1,0 +1,299 @@
+Change Component Designator: OldDesignator=BT? NewDesignator=BT1
+Change Component Designator: OldDesignator=C? NewDesignator=C1
+Change Component Designator: OldDesignator=C? NewDesignator=C2
+Change Component Designator: OldDesignator=C? NewDesignator=C3
+Change Component Designator: OldDesignator=C? NewDesignator=C4
+Change Component Designator: OldDesignator=C? NewDesignator=C5
+Change Component Designator: OldDesignator=C? NewDesignator=C6
+Change Component Designator: OldDesignator=C? NewDesignator=C7
+Change Component Designator: OldDesignator=C? NewDesignator=C8
+Change Component Designator: OldDesignator=C? NewDesignator=C9
+Change Component Designator: OldDesignator=D? NewDesignator=D1
+Change Component Designator: OldDesignator=F? NewDesignator=F1
+Change Component Designator: OldDesignator=H? NewDesignator=H1
+Change Component Designator: OldDesignator=H? NewDesignator=H2
+Change Component Designator: OldDesignator=IC? NewDesignator=IC1
+Change Component Designator: OldDesignator=L? NewDesignator=L1
+Change Component Designator: OldDesignator=L? NewDesignator=L2
+Change Component Designator: OldDesignator=OPTO? NewDesignator=OPTO1
+Change Component Designator: OldDesignator=P? NewDesignator=P1
+Change Component Designator: OldDesignator=P? NewDesignator=P2
+Change Component Designator: OldDesignator=P? NewDesignator=P3
+Change Component Designator: OldDesignator=P? NewDesignator=P4
+Change Component Designator: OldDesignator=P? NewDesignator=P5
+Change Component Designator: OldDesignator=P? NewDesignator=P6
+Change Component Designator: OldDesignator=R? NewDesignator=R1
+Change Component Designator: OldDesignator=R? NewDesignator=R2
+Change Component Designator: OldDesignator=R? NewDesignator=R3
+Change Component Designator: OldDesignator=R? NewDesignator=R4
+Change Component Designator: OldDesignator=R? NewDesignator=R5
+Change Component Designator: OldDesignator=R? NewDesignator=R6
+Change Component Designator: OldDesignator=R? NewDesignator=R7
+Change Component Designator: OldDesignator=R? NewDesignator=R8
+Change Component Designator: OldDesignator=SW? NewDesignator=SW1
+Change Component Designator: OldDesignator=U? NewDesignator=U1
+Change Component Designator: OldDesignator=U? NewDesignator=U2
+Change Component Designator: OldDesignator=VR? NewDesignator=VR1
+Change Component Designator: OldDesignator=VR? NewDesignator=VR2
+Change Component Designator: OldDesignator=Y? NewDesignator=Y1
+Added Pin To Net: NetName=GND Pin=U1-10
+Added Pin To Net: NetName=+3.3 VDK Pin=U1-11
+Added Pin To Net: NetName=GND Pin=U1-19
+Added Pin To Net: NetName=+3.3 VDK Pin=U1-20
+Added Pin To Net: NetName=GND Pin=U1-22
+Added Pin To Net: NetName=GND Pin=U1-27
+Added Pin To Net: NetName=+3.3 VDK Pin=U1-28
+Added Pin To Net: NetName=+3.3 VDK Pin=U1-50
+Added Pin To Net: NetName=GND Pin=U1-74
+Added Pin To Net: NetName=+3.3 VDK Pin=U1-75
+Added Pin To Net: NetName=GND Pin=U1-99
+Added Pin To Net: NetName=+3.3 VDK Pin=U1-100
+Change Net Name : Old Net Name=NetBT?_1 New Net Name=NetBT1_1
+Change Net Name : Old Net Name=NetC?_1 New Net Name=NetC8_1
+Change Net Name : Old Net Name=NetC?_2 New Net Name=NetC9_2
+Change Net Name : Old Net Name=NetD?_1 New Net Name=NetD1_1
+Change Net Name : Old Net Name=NetD?_2 New Net Name=NetD1_2
+Change Net Name : Old Net Name=NetL?_1 New Net Name=NetL1_1
+Added Pin To Net: NetName=NetC2_1 Pin=C2-1
+Added Pin To Net: NetName=NetC2_1 Pin=C5-1
+Added Pin To Net: NetName=NetC2_1 Pin=F1-2
+Added Pin To Net: NetName=NetC2_1 Pin=VR1-3
+Added Pin To Net: NetName=NetC2_1 Pin=VR2-3
+Added Net: Name=NetC2_1
+Added Pin To Net: NetName=NetC3_1 Pin=C3-1
+Added Pin To Net: NetName=NetC3_1 Pin=R1-1
+Added Pin To Net: NetName=NetC3_1 Pin=R3-2
+Added Pin To Net: NetName=NetC3_1 Pin=VR1-1
+Added Net: Name=NetC3_1
+Added Pin To Net: NetName=NetC6_1 Pin=C6-1
+Added Pin To Net: NetName=NetC6_1 Pin=R4-1
+Added Pin To Net: NetName=NetC6_1 Pin=R6-2
+Added Pin To Net: NetName=NetC6_1 Pin=VR2-1
+Added Net: Name=NetC6_1
+Added Pin To Net: NetName=NetC9_1 Pin=C9-1
+Added Pin To Net: NetName=NetC9_1 Pin=U1-13
+Added Net: Name=NetC9_1
+Added Pin To Net: NetName=NetL2_1 Pin=L2-1
+Added Pin To Net: NetName=NetL2_1 Pin=R5-1
+Added Net: Name=NetL2_1
+Added Pin To Net: NetName=Pin_01 Pin=P1-1
+Added Pin To Net: NetName=Pin_01 Pin=U1-1
+Added Net: Name=Pin_01
+Added Pin To Net: NetName=Pin_02 Pin=P1-2
+Added Pin To Net: NetName=Pin_02 Pin=U1-2
+Added Net: Name=Pin_02
+Added Pin To Net: NetName=Pin_03 Pin=P1-3
+Added Pin To Net: NetName=Pin_03 Pin=U1-3
+Added Net: Name=Pin_03
+Added Pin To Net: NetName=Pin_04 Pin=P1-4
+Added Pin To Net: NetName=Pin_04 Pin=U1-4
+Added Net: Name=Pin_04
+Added Pin To Net: NetName=Pin_05 Pin=P1-5
+Added Pin To Net: NetName=Pin_05 Pin=U1-5
+Added Net: Name=Pin_05
+Added Pin To Net: NetName=Pin_07 Pin=P1-6
+Added Pin To Net: NetName=Pin_07 Pin=U1-7
+Added Net: Name=Pin_07
+Added Pin To Net: NetName=Pin_08 Pin=P1-7
+Added Pin To Net: NetName=Pin_08 Pin=U1-8
+Added Net: Name=Pin_08
+Added Pin To Net: NetName=Pin_09 Pin=P1-8
+Added Pin To Net: NetName=Pin_09 Pin=U1-9
+Added Net: Name=Pin_09
+Added Pin To Net: NetName=Pin_15 Pin=P1-9
+Added Pin To Net: NetName=Pin_15 Pin=U1-15
+Added Net: Name=Pin_15
+Added Pin To Net: NetName=Pin_16 Pin=P1-10
+Added Pin To Net: NetName=Pin_16 Pin=U1-16
+Added Net: Name=Pin_16
+Added Pin To Net: NetName=Pin_17 Pin=P1-11
+Added Pin To Net: NetName=Pin_17 Pin=U1-17
+Added Net: Name=Pin_17
+Added Pin To Net: NetName=Pin_18 Pin=P1-12
+Added Pin To Net: NetName=Pin_18 Pin=U1-18
+Added Net: Name=Pin_18
+Added Pin To Net: NetName=Pin_23 Pin=P1-13
+Added Pin To Net: NetName=Pin_23 Pin=U1-23
+Added Net: Name=Pin_23
+Added Pin To Net: NetName=Pin_24 Pin=P1-14
+Added Pin To Net: NetName=Pin_24 Pin=U1-24
+Added Net: Name=Pin_24
+Added Pin To Net: NetName=Pin_25 Pin=P1-15
+Added Pin To Net: NetName=Pin_25 Pin=U1-25
+Added Net: Name=Pin_25
+Added Pin To Net: NetName=Pin_26 Pin=P2-1
+Added Pin To Net: NetName=Pin_26 Pin=U1-26
+Added Net: Name=Pin_26
+Added Pin To Net: NetName=Pin_29 Pin=P2-2
+Added Pin To Net: NetName=Pin_29 Pin=U1-29
+Added Net: Name=Pin_29
+Added Pin To Net: NetName=Pin_30 Pin=P2-3
+Added Pin To Net: NetName=Pin_30 Pin=U1-30
+Added Net: Name=Pin_30
+Added Pin To Net: NetName=Pin_31 Pin=P2-4
+Added Pin To Net: NetName=Pin_31 Pin=U1-31
+Added Net: Name=Pin_31
+Added Pin To Net: NetName=Pin_32 Pin=P2-5
+Added Pin To Net: NetName=Pin_32 Pin=U1-32
+Added Net: Name=Pin_32
+Added Pin To Net: NetName=Pin_33 Pin=P2-6
+Added Pin To Net: NetName=Pin_33 Pin=U1-33
+Added Net: Name=Pin_33
+Added Pin To Net: NetName=Pin_34 Pin=P2-7
+Added Pin To Net: NetName=Pin_34 Pin=U1-34
+Added Net: Name=Pin_34
+Added Pin To Net: NetName=Pin_35 Pin=P2-8
+Added Pin To Net: NetName=Pin_35 Pin=U1-35
+Added Net: Name=Pin_35
+Added Pin To Net: NetName=Pin_36 Pin=P2-9
+Added Pin To Net: NetName=Pin_36 Pin=U1-36
+Added Net: Name=Pin_36
+Added Pin To Net: NetName=Pin_37 Pin=P2-10
+Added Pin To Net: NetName=Pin_37 Pin=U1-37
+Added Net: Name=Pin_37
+Added Pin To Net: NetName=Pin_38 Pin=P2-11
+Added Pin To Net: NetName=Pin_38 Pin=U1-38
+Added Net: Name=Pin_38
+Added Pin To Net: NetName=Pin_39 Pin=P2-12
+Added Pin To Net: NetName=Pin_39 Pin=U1-39
+Added Net: Name=Pin_39
+Added Pin To Net: NetName=Pin_40 Pin=P2-13
+Added Pin To Net: NetName=Pin_40 Pin=U1-40
+Added Net: Name=Pin_40
+Added Pin To Net: NetName=Pin_41 Pin=P2-14
+Added Pin To Net: NetName=Pin_41 Pin=U1-41
+Added Net: Name=Pin_41
+Added Pin To Net: NetName=Pin_42 Pin=P2-15
+Added Pin To Net: NetName=Pin_42 Pin=U1-42
+Added Net: Name=Pin_42
+Added Pin To Net: NetName=Pin_43 Pin=P2-16
+Added Pin To Net: NetName=Pin_43 Pin=U1-43
+Added Net: Name=Pin_43
+Added Pin To Net: NetName=Pin_44 Pin=P2-17
+Added Pin To Net: NetName=Pin_44 Pin=U1-44
+Added Net: Name=Pin_44
+Added Pin To Net: NetName=Pin_45 Pin=P2-18
+Added Pin To Net: NetName=Pin_45 Pin=U1-45
+Added Net: Name=Pin_45
+Added Pin To Net: NetName=Pin_46 Pin=P2-19
+Added Pin To Net: NetName=Pin_46 Pin=U1-46
+Added Net: Name=Pin_46
+Added Pin To Net: NetName=Pin_47 Pin=P2-20
+Added Pin To Net: NetName=Pin_47 Pin=U1-47
+Added Net: Name=Pin_47
+Added Pin To Net: NetName=Pin_48 Pin=P2-21
+Added Pin To Net: NetName=Pin_48 Pin=U1-48
+Added Net: Name=Pin_48
+Added Pin To Net: NetName=Pin_51 Pin=U1-51
+Added Net: Name=Pin_51
+Added Pin To Net: NetName=Pin_52 Pin=U1-52
+Added Net: Name=Pin_52
+Added Pin To Net: NetName=Pin_53 Pin=U1-53
+Added Net: Name=Pin_53
+Added Pin To Net: NetName=Pin_54 Pin=U1-54
+Added Net: Name=Pin_54
+Added Pin To Net: NetName=Pin_55 Pin=U1-55
+Added Net: Name=Pin_55
+Added Pin To Net: NetName=Pin_56 Pin=U1-56
+Added Net: Name=Pin_56
+Added Pin To Net: NetName=Pin_57 Pin=U1-57
+Added Net: Name=Pin_57
+Added Pin To Net: NetName=Pin_58 Pin=U1-58
+Added Net: Name=Pin_58
+Added Pin To Net: NetName=Pin_59 Pin=U1-59
+Added Net: Name=Pin_59
+Added Pin To Net: NetName=Pin_60 Pin=U1-60
+Added Net: Name=Pin_60
+Added Pin To Net: NetName=Pin_61 Pin=U1-61
+Added Net: Name=Pin_61
+Added Pin To Net: NetName=Pin_62 Pin=U1-62
+Added Net: Name=Pin_62
+Added Pin To Net: NetName=Pin_63 Pin=U1-63
+Added Net: Name=Pin_63
+Added Pin To Net: NetName=Pin_64 Pin=U1-64
+Added Net: Name=Pin_64
+Added Pin To Net: NetName=Pin_65 Pin=U1-65
+Added Net: Name=Pin_65
+Added Pin To Net: NetName=Pin_66 Pin=U1-66
+Added Net: Name=Pin_66
+Added Pin To Net: NetName=Pin_67 Pin=U1-67
+Added Net: Name=Pin_67
+Added Pin To Net: NetName=Pin_68 Pin=U1-68
+Added Net: Name=Pin_68
+Added Pin To Net: NetName=Pin_69 Pin=U1-69
+Added Net: Name=Pin_69
+Added Pin To Net: NetName=Pin_70 Pin=U1-70
+Added Net: Name=Pin_70
+Added Pin To Net: NetName=Pin_71 Pin=U1-71
+Added Net: Name=Pin_71
+Added Pin To Net: NetName=Pin_72 Pin=U1-72
+Added Net: Name=Pin_72
+Added Pin To Net: NetName=Pin_76 Pin=U1-76
+Added Net: Name=Pin_76
+Added Pin To Net: NetName=Pin_77 Pin=U1-77
+Added Net: Name=Pin_77
+Added Pin To Net: NetName=Pin_78 Pin=U1-78
+Added Net: Name=Pin_78
+Added Pin To Net: NetName=Pin_79 Pin=U1-79
+Added Net: Name=Pin_79
+Added Pin To Net: NetName=Pin_80 Pin=U1-80
+Added Net: Name=Pin_80
+Added Pin To Net: NetName=Pin_81 Pin=U1-81
+Added Net: Name=Pin_81
+Added Pin To Net: NetName=Pin_82 Pin=U1-82
+Added Net: Name=Pin_82
+Added Pin To Net: NetName=Pin_83 Pin=U1-83
+Added Net: Name=Pin_83
+Added Pin To Net: NetName=Pin_84 Pin=U1-84
+Added Net: Name=Pin_84
+Added Pin To Net: NetName=Pin_85 Pin=U1-85
+Added Net: Name=Pin_85
+Added Pin To Net: NetName=Pin_86 Pin=U1-86
+Added Net: Name=Pin_86
+Added Pin To Net: NetName=Pin_87 Pin=U1-87
+Added Net: Name=Pin_87
+Added Pin To Net: NetName=Pin_88 Pin=U1-88
+Added Net: Name=Pin_88
+Added Pin To Net: NetName=Pin_90 Pin=U1-90
+Added Net: Name=Pin_90
+Added Pin To Net: NetName=Pin_91 Pin=U1-91
+Added Net: Name=Pin_91
+Added Pin To Net: NetName=Pin_92 Pin=U1-92
+Added Net: Name=Pin_92
+Added Pin To Net: NetName=Pin_93 Pin=U1-93
+Added Net: Name=Pin_93
+Added Pin To Net: NetName=Pin_94 Pin=U1-94
+Added Net: Name=Pin_94
+Added Pin To Net: NetName=Pin_95 Pin=U1-95
+Added Net: Name=Pin_95
+Added Pin To Net: NetName=Pin_96 Pin=U1-96
+Added Net: Name=Pin_96
+Added Pin To Net: NetName=Pin_97 Pin=U1-97
+Added Net: Name=Pin_97
+Added Pin To Net: NetName=Pin_98 Pin=U1-98
+Added Net: Name=Pin_98
+Added Member To Class: ClassName=Sheet5 Member=Component C1 100uF
+Added Member To Class: ClassName=Sheet5 Member=Component C2 10uF
+Added Member To Class: ClassName=Sheet5 Member=Component C3 103
+Added Member To Class: ClassName=Sheet5 Member=Component C4 100uF
+Added Member To Class: ClassName=Sheet5 Member=Component C5 10uF
+Added Member To Class: ClassName=Sheet5 Member=Component C6 103
+Added Member To Class: ClassName=Sheet5 Member=Component C7 104
+Added Member To Class: ClassName=Sheet5 Member=Component C9 104
+Added Member To Class: ClassName=Sheet5 Member=Component H1 Header 4P 2.54 Duc Cong
+Added Member To Class: ClassName=Sheet5 Member=Component L2 LED 0805
+Added Member To Class: ClassName=Sheet5 Member=Component P1 Header 12X2
+Added Member To Class: ClassName=Sheet5 Member=Component P3 Header 12X2
+Added Member To Class: ClassName=Sheet5 Member=Component P4 Header 12X2
+Added Member To Class: ClassName=Sheet5 Member=Component P5 Header 20
+Added Member To Class: ClassName=Sheet5 Member=Component P6 Header 20
+Added Member To Class: ClassName=Sheet5 Member=Component R2 3.3k
+Added Member To Class: ClassName=Sheet5 Member=Component R3 200R
+Added Member To Class: ClassName=Sheet5 Member=Component R4 120R
+Added Member To Class: ClassName=Sheet5 Member=Component R5 3.3k
+Added Member To Class: ClassName=Sheet5 Member=Component R6 200R
+Added Member To Class: ClassName=Sheet5 Member=Component R7 2.2k
+Added Member To Class: ClassName=Sheet5 Member=Component R8 100R
+Added Member To Class: ClassName=Sheet5 Member=Component U1 STM32F407xx-LQFP100
+Added Member To Class: ClassName=Sheet5 Member=Component VR1 LM1117T-3.3/NOPB
+Added Room: Name=Sheet5

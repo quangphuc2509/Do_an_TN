@@ -1,0 +1,90 @@
+Removed Pin From Net: NetName=PWMR Pin=Output-19
+Removed Pin From Net: NetName=PWML Pin=Output-20
+Removed Pin From Net: NetName=Pin_01 Pin=U2-1
+Removed Pin From Net: NetName=Pin_02 Pin=U2-2
+Removed Pin From Net: NetName=Pin_03 Pin=U2-3
+Removed Pin From Net: NetName=Pin_23 Pin=U2-23
+Removed Pin From Net: NetName=Pin_24 Pin=U2-24
+Removed Pin From Net: NetName=Pin_25 Pin=U2-25
+Removed Pin From Net: NetName=Pin_26 Pin=U2-26
+Removed Pin From Net: NetName=Pin_30 Pin=U2-30
+Removed Pin From Net: NetName=Pin_31 Pin=U2-31
+Removed Pin From Net: NetName=Pin_32 Pin=U2-32
+Removed Pin From Net: NetName=Pin_40 Pin=U2-40
+Removed Pin From Net: NetName=Pin_47 Pin=U2-47
+Removed Pin From Net: NetName=Pin_48 Pin=U2-48
+Removed Pin From Net: NetName=Pin_59 Pin=U2-59
+Removed Pin From Net: NetName=Pin_60 Pin=U2-60
+Removed Pin From Net: NetName=Pin_68 Pin=U2-68
+Removed Pin From Net: NetName=Pin_69 Pin=U2-69
+Removed Pin From Net: NetName=Pin_72 Pin=U2-72
+Removed Pin From Net: NetName=Pin_76 Pin=U2-76
+Removed Pin From Net: NetName=Pin_81 Pin=U2-81
+Removed Pin From Net: NetName=Pin_82 Pin=U2-82
+Removed Pin From Net: NetName=Pin_83 Pin=U2-83
+Removed Pin From Net: NetName=Pin_86 Pin=U2-86
+Removed Pin From Net: NetName=Pin_87 Pin=U2-87
+Removed Pin From Net: NetName=Pin_88 Pin=U2-88
+Removed Pin From Net: NetName=Pin_89 Pin=U2-89
+Removed Pin From Net: NetName=Pin_91 Pin=U2-91
+Removed Pin From Net: NetName=Pin_92 Pin=U2-92
+Removed Pin From Net: NetName=Pin_93 Pin=U2-93
+Removed Pin From Net: NetName=Pin_95 Pin=U2-95
+Change Component Designator: OldDesignator=Encod_L NewDesignator=Encod_L1
+Change Component Designator: OldDesignator=Header_? NewDesignator=Header_1
+Change Component Designator: OldDesignator=Input NewDesignator=Input1
+Change Component Designator: OldDesignator=Output NewDesignator=Output1
+Added Pin To Net: NetName=+12 Pin=Header_1-1
+Added Pin To Net: NetName=GND Pin=Header_1-2
+Added Pin To Net: NetName=PWMR Pin=Output1-17
+Added Pin To Net: NetName=PWML Pin=Output1-18
+Added Pin To Net: NetName=Den_Run Pin=U2-1
+Added Pin To Net: NetName=Den_Stop Pin=U2-2
+Added Pin To Net: NetName=Den_Warning Pin=U2-3
+Added Pin To Net: NetName=Var Pin=U2-24
+Added Pin To Net: NetName=TX_HC05 Pin=U2-25
+Added Pin To Net: NetName=RX_HC05 Pin=U2-26
+Added Pin To Net: NetName=PWMR Pin=U2-30
+Added Pin To Net: NetName=Encoder_R1 Pin=U2-31
+Added Pin To Net: NetName=Encoder_R2 Pin=U2-32
+Added Pin To Net: NetName=PWML Pin=U2-40
+Added Pin To Net: NetName=SCL_Oled Pin=U2-47
+Added Pin To Net: NetName=SDA_Oled Pin=U2-48
+Added Pin To Net: NetName=Encoder_L1 Pin=U2-59
+Added Pin To Net: NetName=Encoder_L2 Pin=U2-60
+Added Pin To Net: NetName=CLK Pin=U2-89
+Added Pin To Net: NetName=DIN Pin=U2-91
+Added Pin To Net: NetName=CS Pin=U2-95
+Added Pin To Net: NetName=DIR_L Pin=Output1-15
+Added Pin To Net: NetName=DIR_L Pin=U2-86
+Added Net: Name=DIR_L
+Added Pin To Net: NetName=DIR_R Pin=Output1-16
+Added Pin To Net: NetName=DIR_R Pin=U2-87
+Added Net: Name=DIR_R
+Added Pin To Net: NetName=DIR_STEPPER Pin=Output1-5
+Added Pin To Net: NetName=DIR_STEPPER Pin=U2-88
+Added Net: Name=DIR_STEPPER
+Added Pin To Net: NetName=PUlSE_STEPPER Pin=Output1-4
+Added Pin To Net: NetName=PUlSE_STEPPER Pin=U2-23
+Added Net: Name=PUlSE_STEPPER
+Added Pin To Net: NetName=RX_ESP32 Pin=U2-69
+Added Net: Name=RX_ESP32
+Added Pin To Net: NetName=SCL_ESP32 Pin=U2-92
+Added Net: Name=SCL_ESP32
+Added Pin To Net: NetName=SDA_ESP32 Pin=U2-93
+Added Net: Name=SDA_ESP32
+Added Pin To Net: NetName=Start_Button Pin=Input1-3
+Added Pin To Net: NetName=Start_Button Pin=U2-83
+Added Net: Name=Start_Button
+Added Pin To Net: NetName=Stop_Button Pin=Input1-4
+Added Pin To Net: NetName=Stop_Button Pin=U2-82
+Added Net: Name=Stop_Button
+Added Pin To Net: NetName=SWCLK Pin=U2-76
+Added Net: Name=SWCLK
+Added Pin To Net: NetName=SWDIO Pin=U2-72
+Added Net: Name=SWDIO
+Added Pin To Net: NetName=TX_ESP32 Pin=U2-68
+Added Net: Name=TX_ESP32
+Added Pin To Net: NetName=USER_Button Pin=Input1-5
+Added Pin To Net: NetName=USER_Button Pin=U2-81
+Added Net: Name=USER_Button

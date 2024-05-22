@@ -1,0 +1,15 @@
+Change Component Designator: OldDesignator=BT1 NewDesignator=Start
+Change Component Designator: OldDesignator=BT2 NewDesignator=Stop
+Change Component Designator: OldDesignator=BT3 NewDesignator=User
+Change Component Designator: OldDesignator=L1 NewDesignator=RUN LIGHT
+Change Component Designator: OldDesignator=L2 NewDesignator=STOP LIGHT
+Change Component Designator: OldDesignator=L3 NewDesignator=WARN LIGHT
+Change Component Designator: OldDesignator=L4 NewDesignator=SUPPLY
+Change Net Name : Old Net Name=NetBT1_1 New Net Name=NetC4_1
+Change Net Name : Old Net Name=NetBT2_1 New Net Name=NetC5_1
+Change Net Name : Old Net Name=NetBT3_1 New Net Name=NetC6_1
+Change Net Name : Old Net Name=NetL1_1 New Net Name=NetR1_2
+Change Net Name : Old Net Name=NetL2_1 New Net Name=NetR2_2
+Change Net Name : Old Net Name=NetL3_1 New Net Name=NetR3_2
+Change Net Name : Old Net Name=NetL4_1 New Net Name=NetR4_2
+Added Room: Name=Sheet7

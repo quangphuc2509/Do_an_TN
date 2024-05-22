@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=VCC Pin=IC2-2
+Removed Pin From Net: NetName=GND Pin=IC2-3
+Removed Pin From Net: NetName=RX_HC05 Pin=IC2-4
+Removed Pin From Net: NetName=TX_HC05 Pin=IC2-5
+Added Room: Name=Sheet7
