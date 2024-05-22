@@ -1,0 +1,2 @@
+fuse 10A 16V
+diode sr5100 
