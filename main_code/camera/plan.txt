@@ -1,0 +1,11 @@
+viết chương trình test xem điểm áp dụng nhân ma trận nghịch đảo có đúng kết quả hay không
+- phương pháp: sử dụng phương pháp chấm điểm, xác định tọa độ pixel điểm mẫu trên ảnh gốc, áp dụng nhân ma trận nghịch đảo ma trận chiếu phối cảnh ra được tọa độ điểm mẫu trên ảnh mới, sau đó xác định tọa độ điểm mẫu trên ảnh mới nếu thu được kết quả gần đúng thực hiện bước tiếp.
+- Thực hiện chương trình: 
+	+ Hiện tại đã có chương trình cho phép xác nhận tọa độ với ảnh biên và chương trình cho phép biến đổi phối cảnh.
+	+ Chuyển chương trình biến đổi phối cảnh để có thể hướng đối tượng đến
+	+ kết hợp 2 chương trình
+
+
+Nếu đúng, kiểm tra tiếp với tiếp tỷ lệ pixel/mm có áp dụng được không
+- phương pháp:  
+ 

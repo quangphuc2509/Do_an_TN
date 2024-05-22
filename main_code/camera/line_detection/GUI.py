@@ -4,10 +4,12 @@ from PIL import Image, ImageTk
 import tkinter as tk
 from detection_line import *
 from tkinter import messagebox
+from Detection_robot import *
 
 class ImageResizerApp:
     def __init__(self, canvas, image):
         self.canvas = canvas
+        
         
         # Load image using OpenCV
         self.cv_image = image
@@ -95,15 +97,18 @@ class ImageResizerApp:
 
     def show_coordinates(self, event):
         # Calculate the actual coordinates on the original image
-        actual_x = int((self.offset_x + event.x) / self.scale)
-        actual_y = int((self.offset_y + event.y) / self.scale)
-        print(f"Mouse coordinates on image: ({actual_x}, {actual_y})")
+        self.actual_x = int((self.offset_x + event.x) / self.scale)
+        self.actual_y = int((self.offset_y + event.y) / self.scale)
+        print(f"Mouse coordinates on image: ({self.actual_x}, {self.actual_y})")
+        
         
 class main_GUI(Detection_line):
     def __init__(self, root, image, blured_value = 1):
         super().__init__(image, blured_value)
         self.root = root
         self.image = image
+        
+        self.dectect_position = detect_position(self.image)
         
         canvas_width = 350
         canvas_height = 500
@@ -121,9 +126,14 @@ class main_GUI(Detection_line):
         canvas_4.place(x=x_canvas + (canvas_width + 10)*3, y = y_canvas)
         
         self.app1 = ImageResizerApp(canvas_1, self.image)
-        self.app2 = ImageResizerApp(canvas_2, self.edges_image)
-        self.app3 = ImageResizerApp(canvas_3, self.curves_image)
-        self.app4 = ImageResizerApp(canvas_4, self.image)
+        self.app2 = ImageResizerApp(canvas_2, self.dectect_position.working_frame)
+        # self.app3 = ImageResizerApp(canvas_3, self.curves_image)
+        # self.app4 = ImageResizerApp(canvas_4, self.image)
+        
+        print(f"matrix: \n{self.dectect_position.matrix_Perspective}")
+        print(f"inverse matrix: \n{self.dectect_position.inverse_matrix_Perspective}")
+        
+            
         
         # Create a track bar (Scale) to adjust image scale
         self.scale_var = tk.DoubleVar(value = blured_value)
@@ -138,22 +148,27 @@ class main_GUI(Detection_line):
     def update_blured_value(self, value):
         self.blured_value = int(value)
         self.update_edges_image()
-        self.app2.cv_image = self.edges_image
-        self.app2.redraw_image()
+        # self.app2.cv_image = self.edges_image
+        # self.app2.redraw_image()
 
     def update_edges_image(self):
         self.blured_image = cv2.GaussianBlur(self.gray_image, (self.blured_value, self.blured_value), 0)
         self.edges_image = cv2.Canny(self.blured_image, 80, 210, apertureSize=3)
         
     def update_curves_image(self):
-        msg = messagebox.showinfo("hello python", "hello world")
-
+        
+        if (self.app1.actual_x is not None) and (self.app1.actual_y is not None):
+            self.Perspective_point = np.dot(self.dectect_position.matrix_Perspective, [self.app1.actual_x, self.app1.actual_y, 1])
+            self.x_Perspective_point, self. y_Perspective_point, _ = self.Perspective_point / self.Perspective_point[2]
+            print(f"Perspective_point: ({int(self.x_Perspective_point)}, {int(self. y_Perspective_point)})")
+        else:
+            msg = messagebox.showinfo("warning", "chua co gia tri")
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("Image Resizer with Fixed Frame")
     root.state('zoomed')
     
-    url = r"F:\DATN_HK2_2024\camera_img\linearuco.jpg"
+    url = r"F:\DATN_HK2_2024\camera_img\img40.png"
     image = cv2.imread(url)
     app = main_GUI(root, image)
     root.mainloop()

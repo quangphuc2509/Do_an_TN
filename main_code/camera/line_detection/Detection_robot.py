@@ -4,6 +4,7 @@ import time
 import numpy as np
 from detect_marker import *
 import matplotlib.pyplot as plt
+import copy
 
 class detect_position():
     def __init__(self, image):
@@ -36,8 +37,9 @@ class detect_position():
         self.aruco_dict = cv2.aruco.getPredefinedDictionary(self.ARUCO_DICT[self.aruco_type])
         self.aruco_para = cv2.aruco.DetectorParameters()
         
-        self.frame = image
-        self.frame_clean = image
+        self.frame = copy.deepcopy(image)
+        self.frame_clean = copy.deepcopy(image)
+        self.update_detect_marker()
         
     def update_detect_marker(self):
         self.marker_corners, self.id_list = Get_markers(self.frame, aruco_dict= self.aruco_dict, aruco_para= self.aruco_para)
@@ -51,8 +53,8 @@ class detect_position():
         if self.square_found:
             self.working_corner = self.center_markers_point
         
-        self.working_frame = four_point_transform(self.frame_clean, np.array(self.working_corner))
-        
+        self.matrix_Perspective, self.working_frame = four_point_transform(self.frame_clean, np.array(self.working_corner))
+        self.inverse_matrix_Perspective = np.linalg.inv(self.matrix_Perspective)
     def position_extraction(self):
         
         pass
