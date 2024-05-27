@@ -7,13 +7,20 @@ class Detection_line():
         self.image = image
         self.scale = 0.5
         self.blured_value = blured_value
-        
         self.gray_image = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)    
         self.blured_image = cv2.GaussianBlur(self.gray_image, (self.blured_value, self.blured_value), 0)
         self.edges_image = cv2.Canny(self.blured_image, 80, 210, apertureSize=3)
-
+        
+    def cureves_perform(self, first_point_x = None, first_point_y = None):
         self.x_edges_list, self.y_edges_list = self.make_edges_list()
-        # print(f"self.x_edges_list:\n{self.x_edges_list}")
+        
+        if (first_point_x is not None) and (first_point_y is not None):
+            print(f"co gia tri")
+            self.x_first_list, self.y_first_list = self.first_boundary_separation(first_point_x, first_point_y)
+            self.x_edges_list[:len(self.x_first_list)] = self.x_first_list
+            self.y_edges_list[:len(self.y_first_list)] = self.y_first_list
+            
+        print(f"self.x_edges_list:\n{self.x_edges_list}")
         self.average_points, self.x_average_list, self.x_edges_exist = self.find_average_point(self.x_edges_list, self.y_edges_list)
         self.average_points_filted = self.centerline_filter(self.x_average_list, self.x_edges_exist)
         # print(f"self.average_points_filted\n{self.average_points_filted}")
@@ -22,7 +29,6 @@ class Detection_line():
         self.image_resize = cv2.resize(self.image, (0,0), fx=self.scale, fy = self.scale)
         self.edges_image_resize = cv2.resize(self.edges_image, (0,0), fx=self.scale, fy = self.scale)
         self.curves_image_resize = cv2.resize(self.curves_image, (0,0), fx=self.scale, fy = self.scale)
-        
 
     def make_edges_list(self):
         height = self.edges_image.shape[0]
@@ -99,10 +105,37 @@ class Detection_line():
         return result_average
     
     def create_curves_image(self, average_points_filted):
+        self.x_list_to_Perspective = []
+        self.y_list_to_Perspective = []
         self.curves_image = np.zeros_like(self.edges_image)
         for curve in average_points_filted:
             cv2.circle(self.curves_image, curve, 1, 255, -1)
+            self.x_list_to_Perspective.append(curve[0])
+            self.y_list_to_Perspective.append(curve[1])
 
+    def first_boundary_separation(self, first_point_x, first_point_y):
+        x_list = []
+        y_list = []
+        for y in range(first_point_y + 1):
+            x = first_point_x - 5
+            x_point = []
+            y_point = []
+            while x < (first_point_x + 6):
+                if self.edges_image[y, x] != 0:
+                    x_point.append(x)
+                    y_point.append(y) 
+                    while (x < (first_point_x + 6)) and self.edges_image[y,x] != 0:
+                        x =x +1
+                    x_point.append(x)
+                    y_point.append(y)
+                else:
+                    x = x + 1
+            x_list.append(x_point)
+            y_list.append(y_point)
+        return x_list, y_list
+        
+    
+    
 # if __name__ == "__main__":
 #     url = r"F:\DATN_HK2_2024\camera_img\line15.jpg"
 #     image = cv2.imread(url)

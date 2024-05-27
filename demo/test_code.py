@@ -1,13 +1,19 @@
-import numpy as np
+# Mảng 2 chiều 3x10
+arr1 = [
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+]
 
-my_array = np.array([[1, 2, 3], [4, 5, 6]])
-total = np.sum(my_array)
-print(total)  # Kết quả là 21 (1 + 2 + 3 + 4 + 5 + 6 = 21)
+# Mảng 2 chiều 2x4
+arr2 = [
+    [100, 200, 300, 400],
+    [101, 201, 301, 401]
+]
 
-# Tính tổng theo từng hàng (trục 1)
-row_sum = np.sum(my_array, axis=1)
-print(row_sum)  # Kết quả là [6 15]
+# Thay thế 4 giá trị đầu tiên của hàng đầu tiên trong arr1 bằng giá trị của hàng đầu tiên trong arr2
+arr1[:len(arr2)] = arr2
 
-# Tính tổng theo từng cột (trục 0)
-col_sum = np.sum(my_array, axis=0)
-print(col_sum)  # Kết quả là [5 7 9]
+# In mảng arr1 sau khi thay thế
+for row in arr1:
+    print(row)

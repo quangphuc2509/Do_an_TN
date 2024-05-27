@@ -17,7 +17,7 @@ while True:
     
     if (now_time - previous_time) >= 1:
         previous_time = now_time
-        cv2.imwrite('F:/DATN_HK2_2024/camera_img/img' + str(num) + '.png',frame1)
+        cv2.imwrite('F:/DATN_HK2/camera_img/img' + str(num) + '.png',frame1)
         print (f"image saved {num}")
         num = num + 1
     
@@ -25,6 +25,7 @@ while True:
     if key == 27:
         break
     
-    cv2.imshow("img",frame1)
+    fram1_resize = cv2.resize(frame1, (0,0), fx = 0.5, fy=0.5)
+    cv2.imshow("img",fram1_resize)
 cp1.release()
 cv2.destroyAllWindows()
