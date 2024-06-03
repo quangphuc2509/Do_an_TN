@@ -95,18 +95,35 @@ def quick_sort(arr, low, high):
 
         quick_sort(arr, low, pi-1)
         quick_sort(arr, pi+1, high)
-        
-def draw_field(img, corners, ids):
-    if len(corners) == 4:
-        markers_sorted = [0,0,0,0]
+
+def extract_marker_in_working_field(corners, ids):
+    Border_coner = []
+    Border_coner_ids = []
+    working_coner = []
+    working_coner_ids = []
+    if len(corners) >= 4:
+        markers_sorted = [0]*len(corners)
         ids_sorted = ids[:]
         quick_sort(ids_sorted,0,len(ids_sorted)-1)
         count = 0
-        for sorted_corner_id in ids_sorted:
+        # print(f"markers_sorted: {markers_sorted}")
+        # print(f"ids_sorted: {ids_sorted}")
+        for sorted_corner_id in ids_sorted[:]:
             index = ids.index(sorted_corner_id)
             markers_sorted[count]=corners[index]
             count = count +1
-        contours = np.array(markers_sorted)      
+        # print(f"markers_sorted: {markers_sorted}")
+        Border_coner = markers_sorted[:4]
+        Border_coner_ids = ids_sorted[:4]
+        working_coner = markers_sorted[4:]
+        working_coner_ids = ids_sorted[4:]
+    return Border_coner, Border_coner_ids, working_coner, working_coner_ids
+
+def draw_field(img, corners, ids):
+    if len(corners) >= 4:
+        
+        # print(f"Border_coner: {corners}\n")
+        contours = np.array(corners)      
         overlay = img.copy()
         cv2.fillPoly(overlay, pts =[contours], color=(255,215,0))
         alpha = 0.4  # Transparency factor.
@@ -118,6 +135,9 @@ def draw_field(img, corners, ids):
         squarefound=False
     return img_new,squarefound
 
+
+        
+        
 
 # hàm để xác định ra 4 góc của hình chữ nhật theo thứ tự 
 # góc hình chữ nhật: trên-trái,  trên-phải, dưới_phải,  dưới-trái 
@@ -146,6 +166,7 @@ def identiify_corner(center_corner):
 # nhìn từ trên xuống.
 def four_point_transform(video_frame, center_corner):
     # Xác định lại 4 điểm góc theo thứ tự 
+    # print(f"center_corner: {center_corner}\n")
     rect = identiify_corner(center_corner)
     (topLeft, topRight, bottomRight, bottomLeft) = rect
     

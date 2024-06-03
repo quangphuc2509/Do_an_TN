@@ -40,20 +40,22 @@ class detect_position():
         self.frame = copy.deepcopy(image)
         self.frame_clean = copy.deepcopy(image)
         self.working_corner = []
+        self.working_frame = None
         
         self.update_detect_marker()
         
     def update_detect_marker(self):
         self.marker_corners, self.id_list = Get_markers(self.frame, aruco_dict= self.aruco_dict, aruco_para= self.aruco_para)
-        print(f"self.marker_corners: \n{self.marker_corners}")
+        # print(f"self.marker_corners: \n{self.marker_corners}")
         draw_marker(self.frame, self.marker_corners, self.id_list)
         
         self.center_markers_point = get_Marker_Center_Coordinate(self.marker_corners)
         
-        self.frame_with_square, self.square_found = draw_field(self.frame, self.center_markers_point, self.id_list)
+        self.Border_coner, self.Border_coner_ids, self.working_coner, self.working_coner_ids = extract_marker_in_working_field(self.center_markers_point, self.id_list)
+        self.frame_with_square, self.square_found = draw_field(self.frame, self.Border_coner, self.Border_coner_ids)
         
         if self.square_found:
-            self.working_corner = self.center_markers_point
+            self.working_corner = self.Border_coner
         
         if self.working_corner:
             self.matrix_Perspective, self.working_frame = four_point_transform(self.frame_clean, np.array(self.working_corner))

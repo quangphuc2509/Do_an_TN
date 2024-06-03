@@ -9,15 +9,15 @@ from Detection_robot import *
 class ImageResizerApp:
     def __init__(self, canvas, image):
         self.canvas = canvas
-        
         # Load image using OpenCV
         self.cv_image = image
+
         self.cv_image = cv2.cvtColor(self.cv_image, cv2.COLOR_BGR2RGB)
         self.image_height, self.image_width = self.cv_image.shape[:2]
 
         # Convert image to PIL format
-        self.image = Image.fromarray(self.cv_image)
-        self.photo = ImageTk.PhotoImage(self.image)
+        self.image_to_photo = Image.fromarray(self.cv_image)
+        self.photo = ImageTk.PhotoImage(self.image_to_photo)
 
         # Display the image on the canvas
         self.image_item = self.canvas.create_image(0, 0, anchor=tk.NW, image=self.photo)
@@ -105,14 +105,12 @@ class main_GUI(Detection_line):
         self.image_clean = copy.deepcopy(self.image)
         
         self.dectect_position = detect_position(self.image)
-        Detection_line.__init__(self,image=self.dectect_position.working_frame, blured_value = 5)
+        if self.dectect_position.working_frame is not None:
+            Detection_line.__init__(self,image=self.dectect_position.working_frame, blured_value = 5)
         canvas_width = 350
         canvas_height = 500
         x_canvas = 50
         y_canvas = 10
-        
-        # actual_width = 300
-        # actual_height = 178
         
         self.actual_width = 210
         self.actual_height = 297
@@ -128,26 +126,12 @@ class main_GUI(Detection_line):
         self.canvas_4.place(x=x_canvas + (canvas_width + 10)*3, y = y_canvas)
         
         self.app1 = ImageResizerApp(self.canvas_1, self.image_clean)
-        self.app2 = ImageResizerApp(self.canvas_2, self.dectect_position.working_frame)
         self.app3 = ImageResizerApp(self.canvas_3, self.edges_image)
-        # self.app4 = ImageResizerApp(canvas_4, self.image)
         
-        # print(f"matrix: \n{self.dectect_position.matrix_Perspective}")
-        # print(f"inverse matrix: \n{self.dectect_position.inverse_matrix_Perspective}")
         
-        self.working_height, self.working_width = self.dectect_position.working_frame.shape[:2]
-        # print(f"working_height: {self.working_height}\nworking_width: {self.working_width}")
-        
-        self.scale_height = self.actual_height / self.working_height
-        self.scale_width = self.actual_width / self.working_width
         
         self.app1.actual_x = None
         self.app1.actual_y = None
-        self.app2.actual_x = None
-        self.app2.actual_y = None
-        
-        # print(f"sacle_height: {self.scale_height}\scale_width: {self.scale_width}")
-
         
         # Create a track bar (Scale) to adjust image scale
         self.scale_var = tk.DoubleVar(value = blured_value)
@@ -163,12 +147,21 @@ class main_GUI(Detection_line):
                                       width=15, height= 3, cursor="hand2", activebackground= "lightgray", activeforeground= "blue")
         self.button_calc.place(x = x_canvas + canvas_width + 10, y = canvas_height+ 30)
         
-        self.button_calc = tk.Button(master= self.root, text = "calculation", bg="white", font= ("Arial",13), command = self.calc_Perspective_point,
-                                      width=15, height= 3, cursor="hand2", activebackground= "lightgray", activeforeground= "blue")
-        self.button_calc.place(x = x_canvas + canvas_width + 10, y = canvas_height+ 30)
+        
         self.button_calc_1 = tk.Button(master= self.root, text = "calculation_1", bg="white", font= ("Arial",13), command = self.Calc_first_point,
                                       width=15, height= 3, cursor="hand2", activebackground= "lightgray", activeforeground= "blue")
         self.button_calc_1.place(x = x_canvas + (canvas_width + 10)*2, y = canvas_height+ 30)
+        
+        if self.dectect_position.working_frame is not None:
+            self.app2 = ImageResizerApp(self.canvas_2, self.dectect_position.working_frame)
+            self.working_height, self.working_width = self.dectect_position.working_frame.shape[:2]
+            self.scale_height = self.actual_height / self.working_height
+            self.scale_width = self.actual_width / self.working_width
+            
+            self.app2.actual_x = None
+            self.app2.actual_y = None
+        else:
+            msg = messagebox.showinfo("warning", "khong phat hien khong gian lam viec")
         
     def update_blured_value(self, value):
         self.blured_value = int(value)
@@ -181,7 +174,6 @@ class main_GUI(Detection_line):
         self.edges_image = cv2.Canny(self.blured_image, 80, 210, apertureSize=3)
         
     def calc_Perspective_point(self):
-        
         if (self.app1.actual_x) and (self.app1.actual_y):
             self.Perspective_point = np.dot(self.dectect_position.matrix_Perspective, [self.app1.actual_x, self.app1.actual_y, 1])
             self.x_Perspective_point, self. y_Perspective_point, _ = self.Perspective_point / self.Perspective_point[2]
@@ -190,45 +182,47 @@ class main_GUI(Detection_line):
             self.actual_x_calc = self.x_Perspective_point * self.scale_width
             self.actual_y_calc = self.y_Perspective_point * self.scale_height
             print(f"Perspective_point_mm: ({self.actual_x_calc:.4f}, {self. actual_y_calc:.4f})")
+            
+            print(f"\nworking: ({int(self.dectect_position.working_coner[0][0])}, {int(self.dectect_position.working_coner[0][1])})")
+            self.Perspective_point_marker = np.dot(self.dectect_position.matrix_Perspective, [self.dectect_position.working_coner[0][0], self.dectect_position.working_coner[0][1], 1])
+            self.x_Perspective_point_marker, self. y_Perspective_point_marker, _ = self.Perspective_point_marker / self.Perspective_point_marker[2]
+            print(f"Perspective_point_marker: ({int(self.x_Perspective_point_marker)}, {int(self. y_Perspective_point_marker)})")
+            print(f"Perspective_point_marker: ({self.x_Perspective_point_marker:.4f}, {self. y_Perspective_point_marker:.4f})")
+            self.actual_x_calc_marker = self.x_Perspective_point_marker * self.scale_width
+            self.actual_y_calc_marker = self.y_Perspective_point_marker * self.scale_height
+            print(f"Perspective_point_mm: ({self.actual_x_calc_marker:.4f}, {self. actual_y_calc_marker:.4f})")
         else:
             msg = messagebox.showinfo("warning", "chua co gia tri")
     
     def update_curves_image(self):
-        self.cureves_perform(self.app2.actual_x, self.app2.actual_y)
-        self.canvas_4.delete("all")
-        self.app4 = ImageResizerApp(self.canvas_4, self.curves_image)
-        self.app4.cv_image = self.curves_image
-        self.app4.redraw_image()
-        self.working_height, self.working_width = self.curves_image.shape[:2]
-        # print(f"working_height: {self.working_height}\nworking_width: {self.working_width}")
-        self.scale_height = self.actual_height / self.working_height
-        self.scale_width = self.actual_width / self.working_width
-        # print(f"sacle_height: {self.scale_height}\scale_width: {self.scale_width}")
-        # print(f"self.average_points_filted:\n{self.average_points_filted[0][0]}")
-        
-        # self.x_array_to_Perspective = np.array(self.x_list_to_Perspective)
-        # self.y_array_to_Perspective = np.array(self.y_list_to_Perspective)
-        # self.x_array_Perspective = self.x_array_to_Perspective * self.scale_width
-        # self.y_array_Perspective = self.y_array_to_Perspective * self.scale_height
-        self.x_array_Perspective = [element * self.scale_width for element in self.x_list_to_Perspective]
-        self.y_array_Perspective = [element * self.scale_height for element in self.y_list_to_Perspective]
-        # print(f"x_array_Perspective:\n{self.x_array_Perspective}")
-        # print(f"y_array_Perspective:\n{self.y_array_Perspective}")
+        if self.dectect_position.working_frame is not None:
+            self.cureves_perform(self.app2.actual_x, self.app2.actual_y)
+            self.canvas_4.delete("all")
+            self.app4 = ImageResizerApp(self.canvas_4, self.curves_image)
+            self.app4.cv_image = self.curves_image
+            self.app4.redraw_image()
+            self.working_height, self.working_width = self.curves_image.shape[:2]
+            # print(f"working_height: {self.working_height}\nworking_width: {self.working_width}")
+            self.scale_height = self.actual_height / self.working_height
+            self.scale_width = self.actual_width / self.working_width
+
+            self.x_array_Perspective = [element * self.scale_width for element in self.x_list_to_Perspective]
+            self.y_array_Perspective = [element * self.scale_height for element in self.y_list_to_Perspective]
+        else:
+            msg = messagebox.showinfo("warning", "khong phat hien khong gian lam viec")
     
     def Calc_first_point(self):
         if (self.app2.actual_x is not None)  and (self.app2.actual_y is not None):
             self.x_first_list, self.y_first_list = self.first_boundary_separation(self.app2.actual_x, self.app2.actual_y)
-            print(f"self.x_first_list:\n{self.x_first_list}")
-            print(f"self.y_first_list:\n{self.y_first_list}")
         else:
             msg = messagebox.showinfo("warning", "chua co gia tri")
         
-if __name__ == "__main__":
-    root = tk.Tk()
-    root.title("Image Resizer with Fixed Frame")
-    root.state('zoomed')
+# if __name__ == "__main__":
+#     root = tk.Tk()
+#     root.title("Image Resizer with Fixed Frame")
+#     root.state('zoomed')
     
-    url = r"F:\DATN_HK2\camera_img\linearuco.jpg"
-    image = cv2.imread(url)
-    app = main_GUI(root, image)
-    root.mainloop()
+#     url = r"F:\DATN_HK2\camera_img\linearuco.jpg"
+#     image = cv2.imread(url)
+#     app = main_GUI(root, image)
+#     root.mainloop()
