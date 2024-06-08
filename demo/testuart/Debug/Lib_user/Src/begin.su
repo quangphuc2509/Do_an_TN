@@ -1,0 +1,5 @@
+../Lib_user/Src/begin.c:3:6:reset_EN	8	static
+../Lib_user/Src/begin.c:9:6:reset_dir	8	static
+../Lib_user/Src/begin.c:15:6:reset_step	8	static
+../Lib_user/Src/begin.c:21:6:reset_thong_so	8	static
+../Lib_user/Src/begin.c:31:6:khoi_tao	8	static

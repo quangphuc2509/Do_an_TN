@@ -112,8 +112,8 @@ class main_GUI(Detection_line):
         x_canvas = 50
         y_canvas = 10
         
-        self.actual_width = 210
-        self.actual_height = 297
+        self.actual_width = 914
+        self.actual_height = 1502
         
         # Create a canvas to display the image
         self.canvas_1 = tk.Canvas(root, width=canvas_width, height=canvas_height, bg='white')
@@ -135,9 +135,10 @@ class main_GUI(Detection_line):
         
         # Create a track bar (Scale) to adjust image scale
         self.scale_var = tk.DoubleVar(value = blured_value)
-        self.scale_bar = tk.Scale(self.root, from_=1, to=10, resolution=2, orient=tk.HORIZONTAL, label="Scale", 
+        
+        self.scale_blur = tk.Scale(self.root, from_=1, to=10, resolution=2, orient=tk.HORIZONTAL, label="Scale", 
                                   variable=self.scale_var, command=self.update_blured_value, width=15, length=200)
-        self.scale_bar.place(x=50, y=canvas_height+ 30)
+        self.scale_blur.place(x=50, y=canvas_height+ 30)
         
         self.button_curve = tk.Button(master= self.root, text = "curve", bg="white", font= ("Arial",13), command = self.update_curves_image,
                                       width=15, height= 3, cursor="hand2", activebackground= "lightgray", activeforeground= "blue")

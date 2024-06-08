@@ -18,13 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "stm32f1xx_hal.h"
-#include "stdio.h"
-#include "stdint.h"
-#include "math.h"
-#include <float.h>
-#include <string.h>
-
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -76,7 +69,7 @@ static void MX_I2C1_Init(void);
 void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *hi2c) {
     // Continue receiving data for the next transmission
 
-    HAL_I2C_Slave_Receive_IT(hi2c, RxData, RxSIZE);
+	HAL_I2C_Slave_Receive_IT(&hi2c1, RxData, RxSIZE);
     // Concatenate RxData into a single 32-bit variable
     a = ((uint32_t)RxData[0] << 24) |
         ((uint32_t)RxData[1] << 16) |
@@ -99,7 +92,7 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *hi2c) {
 //    if (real_num_count < MAX_REAL_NUMS) {
 //        real_num_array[real_num_count] = real_num;
 //        real_num_count++;
-////        memset( RxData, 0, sizeof( RxData));// Reset các phần tử của RxData về 0
+////        memset( RxData, 0, sizeof( RxData));// Reset các phần tử của RxData v�? 0
 //        RxData[0] =0;
 //		RxData[1] =0;
 //		RxData[2] =0;
@@ -123,9 +116,20 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *hi2c) {
 //    	real_num_array[3] =0;
 //    	real_num_array[4] =0;
 //    	real_num_array[5] =0;
-//    	real_num_count = 0; // Đặt lại biến đếm về 0
+//    	real_num_count = 0; // �?ặt lại biến đếm v�? 0
 //    }
 
+void HAL_I2C_AddrCallback(I2C_HandleTypeDef*hi2c,uint8_t TransferDirection,uint16_t AddrMatchCode)
+{
+		if(TransferDirection == I2C_DIRECTION_TRANSMIT)
+		{
+			HAL_I2C_Slave_Sequential_Receive_IT(&hi2c1,RxData, RxSIZE,I2C_FIRST_AND_LAST_FRAME);
+		}
+		else
+		{
+		Error_Handler();
+		}
+}
 
 
 
@@ -175,11 +179,16 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+  void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *hi2c);
+  void HAL_I2C_AddrCallback(I2C_HandleTypeDef*hi2c,uint8_t TransferDirection,uint16_t AddrMatchCode);
+  HAL_I2C_EnableListen_IT(&hi2c1);
+  HAL_I2C_Slave_Receive_IT(&hi2c1, RxData, RxSIZE);
 
-//  HAL_I2C_SlaveRxCpltCallback(&hi2c1);
+  //HAL_I2C_SlaveRxCpltCallback(&hi2c1);
 
 
-  // Gọi hàm chuyển đổi
+  // G�?i hàm chuyển đổi
+
 
 
   /* USER CODE END 2 */
@@ -192,7 +201,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	    // Bắt đầu nhận dữ liệu từ master
-//  HAL_I2C_Slave_Receive_IT(&hi2c1, RxData, RxSIZE);
+
 
 
   }
@@ -211,10 +220,13 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL2;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -224,7 +236,7 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;

@@ -1,0 +1,14 @@
+Change Component Footprint: Designator=C8 Old Footprint=CAPR5-4X5 New Footprint=tu hoa 10mm
+Change Component Comment : Designator=C8 Old Comment=Cap2 New Comment=470uF
+Change component parameters: Designator = "C8" ("C8"); Footprint = "CAPR5-4X5"; UniqueID = "\SZEYYODS" ("\SZEYYODS")
+Change component parameters (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ma_Hang"; Value = "MH002204"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "So_Chan"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ten_Linh_Kien"; Value = "T? Hóa 470uF 35V 10x15MM"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=Sheet6 Member=Component L1 33uH SMD
+Added Member To Class: ClassName=Sheet6 Member=Component L2 LED 0805
+Added Member To Class: ClassName=Sheet6 Member=Component L3 LED 0805
+Added Member To Class: ClassName=Sheet6 Member=Component L4 LED 0805
+Added Room: Name=Sheet6

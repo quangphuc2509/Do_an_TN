@@ -1,0 +1,4 @@
+../Lib_user/Src/calculate_ARR.c:5:10:calculate_Period2	24	static
+../Lib_user/Src/calculate_ARR.c:13:10:calculate_Period3	24	static
+../Lib_user/Src/calculate_ARR.c:21:10:calculate_Period4	24	static
+../Lib_user/Src/calculate_ARR.c:29:10:float_to_uint16	16	static

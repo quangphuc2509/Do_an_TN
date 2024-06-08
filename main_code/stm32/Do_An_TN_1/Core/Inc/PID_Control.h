@@ -19,11 +19,12 @@ struct Para_Motor{
 	double Ui, Ui_1, Ui_Antiwindup;	// Thông số khâu I
 	float Ud, Ud_1;					// Thông số khâu D
 	double ek, ek_1;				// Sai số tốc độ động cơ
-	double Temp_PWM;
+	double Temp_PWM, Temp_PWM_1;
 	uint16_t Out_PWM;				// Giá trị PWM điều khiển động
 	float Out_fPWM;
 	uint32_t Encoder, Encoder_P;	// Giá trị đọc encoder động cơ
 	float RPM_Avg, RPM, Temp[20], SP_RPM;	// Tốc độ động cơ
+	float Rad_s, SP_Rad_s;
 
 };
 

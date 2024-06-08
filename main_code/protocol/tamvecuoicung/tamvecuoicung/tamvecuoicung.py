@@ -47,7 +47,7 @@ def convert_to_scientific_notation(number):
         if len(exponent_binary) < 8:
             exponent_binary = '0' * (8 - len(exponent_binary)) + exponent_binary
         # Ghép chuỗi nhị phân của x_value và exponent lại với nhau và thêm 'b' vào đầu
-        combined_binary =x_binary + exponent_binary 
+        combined_binary =x_binary + exponent_binary + '\n'
 
 
     else:
@@ -73,7 +73,7 @@ def convert_to_scientific_notation(number):
             exponent_binary = '0' * (8 - len(exponent_binary)) + exponent_binary
 
         # Ghép chuỗi nhị phân của x_value và exponent lại với nhau và thêm 'b' vào đầu
-        combined_binary = x_binary + exponent_binary 
+        combined_binary = x_binary + exponent_binary +'\n'
         
     return combined_binary
 
@@ -114,8 +114,9 @@ while True:
     datasend = convert_to_scientific_notation(original_number)
     
     # Gửi dữ liệu qua kết nối
+    
     client_socket.send(datasend.encode())
-    # time.sleep(0.001)
+    time.sleep(0.01)
     # Tăng biến count lên
     count += 1
     print("Đã gửi lần thứ", count)

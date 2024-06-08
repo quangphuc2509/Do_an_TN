@@ -1,0 +1,57 @@
+Removed Pin From Net: NetName=Encoder_L1 Pin=Motor_L1-1
+Removed Pin From Net: NetName=Encoder_L2 Pin=Motor_L1-2
+Removed Pin From Net: NetName=VCC Pin=Motor_L1-3
+Removed Pin From Net: NetName=GND Pin=Motor_L1-4
+Removed Pin From Net: NetName=ML2 Pin=Motor_L1-5
+Removed Pin From Net: NetName=ML1 Pin=Motor_L1-6
+Removed Pin From Net: NetName=Encoder_R1 Pin=Motor_R1-1
+Removed Pin From Net: NetName=Encoder_R2 Pin=Motor_R1-2
+Removed Pin From Net: NetName=VCC Pin=Motor_R1-3
+Removed Pin From Net: NetName=GND Pin=Motor_R1-4
+Removed Pin From Net: NetName=MR2 Pin=Motor_R1-5
+Removed Pin From Net: NetName=MR1 Pin=Motor_R1-6
+Removed Member From Class: ClassName=Sheet6 Member=Motor_L1
+Removed Member From Class: ClassName=Sheet6 Member=Motor_R1
+Added Component: Designator=H2(Header 4P DC 2.54)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001310"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Header 4P XH2.54-4P Ð?c Cong"; VariantName = "[No Variations]"
+Added Component: Designator=H3(Header 4P DC 2.54)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001310"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Header 4P XH2.54-4P Ð?c Cong"; VariantName = "[No Variations]"
+Added Component: Designator=ML1(HED2)
+Add component (AddParameter): Name = "Class"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Component: Designator=MR1(HED2)
+Add component (AddParameter): Name = "Class"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VCC Pin=H2-1
+Added Pin To Net: NetName=GND Pin=H2-2
+Added Pin To Net: NetName=Encoder_R1 Pin=H2-3
+Added Pin To Net: NetName=Encoder_R2 Pin=H2-4
+Added Pin To Net: NetName=VCC Pin=H3-1
+Added Pin To Net: NetName=GND Pin=H3-2
+Added Pin To Net: NetName=Encoder_L1 Pin=H3-3
+Added Pin To Net: NetName=Encoder_L2 Pin=H3-4
+Added Pin To Net: NetName=ML2 Pin=ML1-1
+Added Pin To Net: NetName=ML1 Pin=ML1-2
+Added Pin To Net: NetName=MR2 Pin=MR1-1
+Added Pin To Net: NetName=MR1 Pin=MR1-2
+Added Member To Class: ClassName=Sheet6 Member=Component H2 Encoder_R
+Added Member To Class: ClassName=Sheet6 Member=Component H3 Encoder_R
+Added Member To Class: ClassName=Sheet6 Member=Component L1 33uH SMD
+Added Member To Class: ClassName=Sheet6 Member=Component L2 LED 0805
+Added Member To Class: ClassName=Sheet6 Member=Component L3 LED 0805
+Added Member To Class: ClassName=Sheet6 Member=Component L4 LED 0805
+Added Member To Class: ClassName=Sheet6 Member=Component ML1 Header 2_1
+Added Member To Class: ClassName=Sheet6 Member=Component MR1 Header 2_1
+Added Room: Name=Sheet6

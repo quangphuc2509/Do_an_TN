@@ -1,0 +1,4 @@
+../Core/Src/Fuzzy_01.c:14:7:triaf	40	static
+../Core/Src/Fuzzy_01.c:39:6:Processing	40	static
+../Core/Src/Fuzzy_01.c:69:6:Rule	24	static
+../Core/Src/Fuzzy_01.c:120:6:Final_Value_FC	32	static

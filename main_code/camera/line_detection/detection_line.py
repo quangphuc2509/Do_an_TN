@@ -20,7 +20,7 @@ class Detection_line():
             self.x_edges_list[:len(self.x_first_list)] = self.x_first_list
             self.y_edges_list[:len(self.y_first_list)] = self.y_first_list
             
-        print(f"self.x_edges_list:\n{self.x_edges_list}")
+        # print(f"self.x_edges_list:\n{self.x_edges_list}")
         self.average_points, self.x_average_list, self.x_edges_exist = self.find_average_point(self.x_edges_list, self.y_edges_list)
         self.average_points_filted = self.centerline_filter(self.x_average_list, self.x_edges_exist)
         # print(f"self.average_points_filted\n{self.average_points_filted}")
@@ -85,10 +85,10 @@ class Detection_line():
         for i in range(1, len(average_array_copy)):
             diff = np.abs(average_array_copy[i-1] - average_array[i])
 
-            if diff > 5:
+            if diff > 4:
                 result = np.abs(average_array_copy[i-1] - x_array_copy[i])
 
-                bool_condition = result < 7
+                bool_condition = result < 17
                 
                 value_condition = x_array_copy[i][bool_condition]
                 
@@ -141,7 +141,7 @@ class Detection_line():
 #     image = cv2.imread(url)
 #     average = Detection_line(image,1)
     
-#     cv2.imshow("Raw Image", average.image_resize)
+#     # cv2.imshow("Raw Image", average.image_resize)
 #     cv2.imshow('edges', average.edges_image_resize)
 #     cv2.imshow('Curves', average.curves_image_resize)
 #     cv2.waitKey(0)

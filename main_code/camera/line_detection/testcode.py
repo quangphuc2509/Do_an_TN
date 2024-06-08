@@ -1,64 +1,112 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QPushButton, QWidget, QLabel, QHBoxLayout
-from PyQt5.QtCore import QPropertyAnimation, QRect
+# import math
+# import socket
+# import threading
+# import time
+# import random
 
-class App(QMainWindow):
-    def __init__(self):
-        super().__init__()
+# def twos_complement(binary_str):
+#     # Nếu đầu vào không đủ 32 bit, bổ sung số 0 vào trước chuỗi nhị phân
+#     binary_str = binary_str.zfill(32)
 
-        self.setWindowTitle("Giao Diện Chính")
-        self.setGeometry(100, 100, 800, 600)
+#     # Đảo bit của chuỗi nhị phân đã lọc
+#     reversed_binary_str = ''.join('1' if bit == '0' else '0' for bit in binary_str)
 
-        # Tạo widget chính
-        self.central_widget = QWidget()
-        self.setCentralWidget(self.central_widget)
+#     # Cộng thêm 1
+#     result = bin(int(reversed_binary_str, 2) + 1)[2:]
 
-        # Layout chính
-        self.main_layout = QHBoxLayout(self.central_widget)
+#     return result
 
-        # Khung bên trái
-        self.sidebar = QWidget()
-        self.sidebar.setFixedWidth(200)
-        self.sidebar_layout = QVBoxLayout(self.sidebar)
-        self.sidebar.setStyleSheet("background-color: lightgrey;")
-        self.main_layout.addWidget(self.sidebar)
+# def convert_to_scientific_notation(number):
 
-        # Các tùy chọn trong sidebar
-        self.create_sidebar_content()
 
-        # Nút ẩn/hiện sidebar
-        self.toggle_button = QPushButton("☰")
-        self.toggle_button.clicked.connect(self.toggle_sidebar)
-        self.toggle_button.setFixedSize(30, 30)
-        self.main_layout.addWidget(self.toggle_button)
+#     if number < 0:
+#         number = abs(number)
+#         # Chuyển đổi số thành dạng scientific notation
+#         scientific_notation = '{:.8e}'.format(number)
 
-        self.sidebar_visible = True
+#         # Tách phần nguyên và phần mũ từ scientific notation
+#         integer_part, exponent_part = scientific_notation.split('e')
 
-    def create_sidebar_content(self):
-        label1 = QLabel("Tính năng 1")
-        label2 = QLabel("Tính năng 2")
-        label3 = QLabel("Tính năng 3")
-        self.sidebar_layout.addWidget(label1)
-        self.sidebar_layout.addWidget(label2)
-        self.sidebar_layout.addWidget(label3)
+#         # Chuyển đổi phần nguyên thành số nguyên
+#         integer_value = int(integer_part.replace('.', ''))
 
-    def toggle_sidebar(self):
-        animation = QPropertyAnimation(self.sidebar, b"geometry")
-        animation.setDuration(300)
-        current_geometry = self.sidebar.geometry()
+#         # Chuyển đổi phần mũ thành số nguyên
+#         exponent = (int(exponent_part) - 8)
 
-        if self.sidebar_visible:
-            end_geometry = QRect(current_geometry.x(), current_geometry.y(), 0, current_geometry.height())
-        else:
-            end_geometry = QRect(current_geometry.x(), current_geometry.y(), 200, current_geometry.height())
+#         # Chuyển đổi x_value và exponent sang binary
+#         x_binary_repair = bin(integer_value)[2:]  # Bỏ qua tiền tố '0b'
 
-        animation.setStartValue(current_geometry)
-        animation.setEndValue(end_geometry)
-        animation.start()
-        self.sidebar_visible = not self.sidebar_visible
+#         x_binary =  twos_complement( x_binary_repair)
+        
+#         if len(x_binary) < 32:
+#             x_binary = '0' * (32 - len(x_binary)) + x_binary
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    main_window = App()
-    main_window.show()
-    sys.exit(app.exec_())
+#         exponent_binary = bin(exponent)[3:]  # Bỏ qua tiền tố '0b'
+#         if len(exponent_binary) < 8:
+#             exponent_binary = '0' * (8 - len(exponent_binary)) + exponent_binary
+#         # Ghép chuỗi nhị phân của x_value và exponent lại với nhau và thêm 'b' vào đầu
+#         combined_binary =x_binary + exponent_binary 
+
+
+#     else:
+#         # Chuyển đổi số thành dạng scientific notation
+#         print(f"number: {number}")
+#         print(f"number_type: {type(number)}")
+#         scientific_notation = '{:.8e}'.format(number)
+#         print(f"scientific_notation: {scientific_notation}")
+#         print(f"scientific_notation_type: {type(scientific_notation)}")
+        
+#         # Tách phần nguyên và phần mũ từ scientific notation
+#         integer_part, exponent_part = scientific_notation.split('e')
+#         print(f"integer_part: {integer_part}")
+#         print(f"exponent_part: {exponent_part}")
+        
+#         # Chuyển đổi phần nguyên thành số nguyên
+#         integer_value = int(integer_part.replace('.', ''))
+#         print(f"integer_value: {integer_value}")
+        
+#         # Chuyển đổi phần mũ thành số nguyên
+#         exponent = (int(exponent_part) - 8)
+#         print(f"exponent: {exponent}")
+
+#         # Chuyển đổi x_value và exponent sang binary
+#         x_binary = bin(integer_value)[2:]  # Bỏ qua tiền tố '0b'
+#         if len(x_binary) < 32:
+#             x_binary = '0' * (32 - len(x_binary)) + x_binary
+            
+#         exponent_binary = bin(exponent)[3:]  # Bỏ qua tiền tố '0b'
+#         if len(exponent_binary) < 8:
+#             exponent_binary = '0' * (8 - len(exponent_binary)) + exponent_binary
+
+#         # Ghép chuỗi nhị phân của x_value và exponent lại với nhau và thêm 'b' vào đầu
+#         combined_binary = x_binary + exponent_binary 
+        
+#     return combined_binary
+
+# origin_number = 1.234
+
+# scientific_number = convert_to_scientific_notation(origin_number)
+# print(scientific_number)
+
+
+# Python code to demonstrate the Exception of 
+# randrange(), ValueError, start >= start
+ 
+import tkinter as tk
+from tkinter import messagebox
+
+def on_closing():
+    if messagebox.askokcancel("Quit", "Do you want to quit?"):
+        top.destroy()
+
+root = tk.Tk()
+root.title("Main Window")
+
+top = tk.Toplevel(root)
+top.title("Second Window")
+
+# Thiết lập sự kiện cho dấu 'X' đóng cửa sổ
+top.protocol("WM_DELETE_WINDOW", on_closing)
+
+root.mainloop()
+ 

@@ -1,0 +1,10 @@
+../Lib_user/Src/body.c:3:6:gan_du_lieu_uart	4	static
+../Lib_user/Src/body.c:13:6:reset_gia_tri_dem	4	static
+../Lib_user/Src/body.c:21:6:send_encoder_begin	8	static
+../Lib_user/Src/body.c:25:6:send_encoder_finish	8	static
+../Lib_user/Src/body.c:30:6:begin_motor	8	static
+../Lib_user/Src/body.c:37:6:stop_motor	8	static
+../Lib_user/Src/body.c:50:6:wait_uart	4	static
+../Lib_user/Src/body.c:54:6:wait_motor_finish	4	static
+../Lib_user/Src/body.c:58:6:motor_finish	8	static
+../Lib_user/Src/body.c:74:6:send_uart	296	static

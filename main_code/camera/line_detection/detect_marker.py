@@ -73,7 +73,8 @@ def draw_marker(img, corners, ids):
             cv2.putText(img, str(markerID),(topLeft[0], topLeft[1] - 10), cv2.FONT_HERSHEY_SIMPLEX,
                 0.5, (0, 255, 0), 2)
     else:
-        print("không có marker")
+        # print("không có marker")
+        pass
         
 def partition(arr, low, high):
     i = (low-1)         

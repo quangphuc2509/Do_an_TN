@@ -5,7 +5,7 @@ from time import sleep
 PORT = 55555  
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
-SERVER = '192.168.0.200'
+SERVER = '192.168.189.123'
 ADDR = (SERVER, PORT)
 
 client_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -19,9 +19,9 @@ connected = True
 # thread is programme which is run in parallel with main programme 
 def handle_rev(client_tcp):
     while connected:
-        msg = client_tcp.recv(25).decode(FORMAT)
+        msg = client_tcp.recv(1024).decode(FORMAT)
         print(msg)
-        print(len(msg))
+        # print(len(msg))
 
 def send(msg):
     if isinstance(msg, str):

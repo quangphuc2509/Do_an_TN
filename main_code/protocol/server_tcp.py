@@ -1,7 +1,7 @@
 import socket
 import threading
 
-PORT = 55555
+PORT = 5050
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT) # create address client
 FORMAT = 'utf-8'
@@ -24,15 +24,17 @@ def handle_client(conn, addr):
         print(f"[{addr}] {msg}")
         print(len(msg))
         message = msg
-        # conn.send(message.encode(FORMAT)) # if server receives , server will send data to client
+        conn.send(message.encode(FORMAT)) # if server receives , server will send data to client
     conn.close()
 
 def start():
     server.listen()
     print(f"[LISTENING] Server is listening on {SERVER}")
+    conn, addr = server.accept()
+    print(f"[ACTIVE CONNECTIONS] {threading.active_count()-1}")
     while True:
-        conn, addr = server.accept()
-        print(f"[ACTIVE CONNECTIONS] {threading.active_count()-1}")
+        # conn, addr = server.accept()
+        # print(f"[ACTIVE CONNECTIONS] {threading.active_count()-1}")
         clients.append(conn)
         thread = threading.Thread(target=handle_client, args=(conn, addr))
         thread.start()

@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=Pin_24V Pin=Header_1-1
+Removed Pin From Net: NetName=GND Pin=Header_1-2
+Removed Member From Class: ClassName=Sheet6 Member=Header_1
+Added Component: Designator=JP2(HED2)
+Add component (AddParameter): Name = "Class"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=JP2-1
+Added Pin To Net: NetName=Pin_24V Pin=JP2-2
+Added Member To Class: ClassName=Sheet6 Member=Component JP2 Header 2_1
+Added Member To Class: ClassName=Sheet6 Member=Component L1 33uH SMD
+Added Member To Class: ClassName=Sheet6 Member=Component L2 LED 0805
+Added Member To Class: ClassName=Sheet6 Member=Component L3 LED 0805
+Added Member To Class: ClassName=Sheet6 Member=Component L4 LED 0805
+Added Room: Name=Sheet6

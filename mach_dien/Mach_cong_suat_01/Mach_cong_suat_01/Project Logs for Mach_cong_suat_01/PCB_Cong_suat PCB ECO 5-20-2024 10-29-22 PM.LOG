@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=NetD2_2 Pin=L1-1
+Removed Pin From Net: NetName=+12 Pin=L1-2
+Removed Member From Class: ClassName=Sheet6 Member=L5
+Change Component Designator: OldDesignator=L2 NewDesignator=L1
+Change Component Designator: OldDesignator=L3 NewDesignator=L2
+Change Component Designator: OldDesignator=L4 NewDesignator=L3
+Change Component Designator: OldDesignator=L5 NewDesignator=L4
+Added Component: Designator=J2(DTPUA10)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "DTPU100A10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetD2_2 Pin=J2-P$1
+Added Pin To Net: NetName=+12 Pin=J2-P$2
+Change Net Name : Old Net Name=NetL3_1 New Net Name=NetL2_1
+Change Net Name : Old Net Name=NetL4_1 New Net Name=NetL3_1
+Change Net Name : Old Net Name=NetL5_1 New Net Name=NetL4_1
+Added Member To Class: ClassName=Sheet6 Member=Component J2 470uH
+Added Room: Name=Sheet6

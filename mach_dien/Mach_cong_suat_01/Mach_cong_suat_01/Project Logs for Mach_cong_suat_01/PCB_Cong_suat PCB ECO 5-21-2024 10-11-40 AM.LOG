@@ -1,0 +1,66 @@
+Added Component: Designator=Bridge_1(LMD18200)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "LMD18200T/NOPB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=Bridge_2(LMD18200)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "LMD18200T/NOPB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=MR1 Pin=Bridge_1-2
+Added Pin To Net: NetName=+12 Pin=Bridge_1-6
+Added Pin To Net: NetName=GND Pin=Bridge_1-7
+Added Pin To Net: NetName=MR2 Pin=Bridge_1-10
+Added Pin To Net: NetName=ML1 Pin=Bridge_2-2
+Added Pin To Net: NetName=+12 Pin=Bridge_2-6
+Added Pin To Net: NetName=GND Pin=Bridge_2-7
+Added Pin To Net: NetName=ML2 Pin=Bridge_2-10
+Added Pin To Net: NetName=NetBridge_1_1 Pin=Bridge_1-1
+Added Pin To Net: NetName=NetBridge_1_1 Pin=C10-1
+Added Net: Name=NetBridge_1_1
+Added Pin To Net: NetName=NetBridge_1_3 Pin=Bridge_1-3
+Added Pin To Net: NetName=NetBridge_1_3 Pin=R3-2
+Added Net: Name=NetBridge_1_3
+Added Pin To Net: NetName=NetBridge_1_4 Pin=Bridge_1-4
+Added Pin To Net: NetName=NetBridge_1_4 Pin=R7-2
+Added Net: Name=NetBridge_1_4
+Added Pin To Net: NetName=NetBridge_1_5 Pin=Bridge_1-5
+Added Pin To Net: NetName=NetBridge_1_5 Pin=R5-2
+Added Net: Name=NetBridge_1_5
+Added Pin To Net: NetName=NetBridge_1_8 Pin=Bridge_1-8
+Added Pin To Net: NetName=NetBridge_1_8 Pin=R6-2
+Added Net: Name=NetBridge_1_8
+Added Pin To Net: NetName=NetBridge_1_9 Pin=Bridge_1-9
+Added Pin To Net: NetName=NetBridge_1_9 Pin=R4-1
+Added Net: Name=NetBridge_1_9
+Added Pin To Net: NetName=NetBridge_1_11 Pin=Bridge_1-11
+Added Pin To Net: NetName=NetBridge_1_11 Pin=C12-1
+Added Net: Name=NetBridge_1_11
+Added Pin To Net: NetName=NetBridge_2_1 Pin=Bridge_2-1
+Added Pin To Net: NetName=NetBridge_2_1 Pin=C14-1
+Added Net: Name=NetBridge_2_1
+Added Pin To Net: NetName=NetBridge_2_3 Pin=Bridge_2-3
+Added Pin To Net: NetName=NetBridge_2_3 Pin=R8-2
+Added Net: Name=NetBridge_2_3
+Added Pin To Net: NetName=NetBridge_2_4 Pin=Bridge_2-4
+Added Pin To Net: NetName=NetBridge_2_4 Pin=R13-2
+Added Net: Name=NetBridge_2_4
+Added Pin To Net: NetName=NetBridge_2_5 Pin=Bridge_2-5
+Added Pin To Net: NetName=NetBridge_2_5 Pin=R11-2
+Added Net: Name=NetBridge_2_5
+Added Pin To Net: NetName=NetBridge_2_8 Pin=Bridge_2-8
+Added Pin To Net: NetName=NetBridge_2_8 Pin=R12-2
+Added Net: Name=NetBridge_2_8
+Added Pin To Net: NetName=NetBridge_2_9 Pin=Bridge_2-9
+Added Pin To Net: NetName=NetBridge_2_9 Pin=R10-1
+Added Net: Name=NetBridge_2_9
+Added Pin To Net: NetName=NetBridge_2_11 Pin=Bridge_2-11
+Added Pin To Net: NetName=NetBridge_2_11 Pin=C16-1
+Added Net: Name=NetBridge_2_11
+Added Member To Class: ClassName=Sheet6 Member=Component Bridge_1 LMD18200T/NOPB
+Added Member To Class: ClassName=Sheet6 Member=Component Bridge_2 LMD18200T/NOPB
