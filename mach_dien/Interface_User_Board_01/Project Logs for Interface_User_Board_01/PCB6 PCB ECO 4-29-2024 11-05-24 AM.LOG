@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=VCC Pin=IC2-2
+Added Pin To Net: NetName=GND Pin=IC2-3
+Added Pin To Net: NetName=RX_HC05 Pin=IC2-4
+Added Pin To Net: NetName=TX_HC05 Pin=IC2-5
+Added Room: Name=Sheet7

@@ -1,0 +1,6 @@
+Change Component Designator: OldDesignator=Start1 NewDesignator=Start
+Change Component Designator: OldDesignator=Start2 NewDesignator=Stop
+Change Component Designator: OldDesignator=Start3 NewDesignator=User
+Added Pin To Net: NetName=NetR9_1 Pin=P1-10
+Change Net Name : Old Net Name=NetR9_1 New Net Name=Input_03
+Added Room: Name=Sheet7

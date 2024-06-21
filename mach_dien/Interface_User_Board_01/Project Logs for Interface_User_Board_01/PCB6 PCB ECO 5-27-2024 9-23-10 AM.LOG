@@ -1,0 +1,8 @@
+Added Pin To Net: NetName=GND Pin=P5-3
+Added Pin To Net: NetName=GND Pin=P5-4
+Added Pin To Net: NetName=RX_HC05 Pin=P5-5
+Added Pin To Net: NetName=TX_HC05 Pin=P5-6
+Added Pin To Net: NetName=GND Pin=P5-7
+Added Pin To Net: NetName=GND Pin=P5-8
+Added Pin To Net: NetName=SCL_Oled Pin=P5-9
+Added Pin To Net: NetName=SDA_Oled Pin=P5-10

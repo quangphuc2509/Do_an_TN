@@ -1,0 +1,46 @@
+Change Component Footprint: Designator=VR1 Old Footprint=Bien Tro Vi Chinh Dung New Footprint=Bien Tro Tam Giac Dung
+Change Component Designator: OldDesignator=R3 NewDesignator=R4
+Change Component Designator: OldDesignator=R4 NewDesignator=R5
+Change Component Designator: OldDesignator=R5 NewDesignator=R6
+Change Component Designator: OldDesignator=R6 NewDesignator=R7
+Change Component Designator: OldDesignator=R7 NewDesignator=R8
+Change Component Designator: OldDesignator=R8 NewDesignator=R9
+Change Component Designator: OldDesignator=R9 NewDesignator=R10
+Change Component Designator: OldDesignator=R10 NewDesignator=R11
+Change Component Designator: OldDesignator=R11 NewDesignator=R12
+Change component parameters: Designator = "VR1" ("VR1"); Footprint = "Bien Tro Vi Chinh Dung"; UniqueID = "\BBTFLQXN" ("\BBTFLQXN")
+Change component parameters (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ma_Hang"; Value = "MH003709"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ten_Linh_Kien"; Value = "Bi?n Tr? Tam Giác 102-1K RM065"; VariantName = "[No Variations]"
+Added Component: Designator=BZZ1(BUZZER_12.0X8.5MM)
+Added Component: Designator=Q1(TO92)
+Add component (AddParameter): Name = "Value"; Value = "C9014"; VariantName = "[No Variations]"
+Added Component: Designator=R3(tro smd 0805)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "Dán"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH005487"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "So_Chan"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Tr? 0805 1% 680R"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=5V Pin=BZZ1-1
+Added Pin To Net: NetName=GND Pin=Q1-1
+Added Pin To Net: NetName=Buzzer Pin=R3-1
+Change Net Name : Old Net Name=NetR3_2 New Net Name=NetR4_2
+Change Net Name : Old Net Name=NetR4_2 New Net Name=NetR5_2
+Added Pin To Net: NetName=NetBZZ1_2 Pin=BZZ1-2
+Added Pin To Net: NetName=NetBZZ1_2 Pin=Q1-2
+Added Net: Name=NetBZZ1_2
+Added Pin To Net: NetName=NetQ1_3 Pin=Q1-3
+Added Pin To Net: NetName=NetQ1_3 Pin=R3-2
+Added Net: Name=NetQ1_3
+Added Member To Class: ClassName=Sheet7 Member=Component BZZ1 Buzzer
+Added Member To Class: ClassName=Sheet7 Member=Component C4 224
+Added Member To Class: ClassName=Sheet7 Member=Component C7 103
+Added Member To Class: ClassName=Sheet7 Member=Component Q1 2N4401
+Added Member To Class: ClassName=Sheet7 Member=Component R5 330R
+Added Member To Class: ClassName=Sheet7 Member=Component R6 330R
+Added Member To Class: ClassName=Sheet7 Member=Component R12 100R
+Added Room: Name=Sheet7
