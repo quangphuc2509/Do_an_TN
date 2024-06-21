@@ -98,22 +98,22 @@ class ImageResizerApp:
         
         
 class main_GUI(Detection_line):
-    def __init__(self, root, image, blured_value = 5):
-        super().__init__(image, blured_value)
+    def __init__(self, root, image, blured_value = 5, threshold_1 = 80, threshold_2 = 200):
+        super().__init__(image, blured_value, threshold_1, threshold_2)
         self.root = root
         self.image = image
         self.image_clean = copy.deepcopy(self.image)
         
         self.dectect_position = detect_position(self.image)
         if self.dectect_position.working_frame is not None:
-            Detection_line.__init__(self,image=self.dectect_position.working_frame, blured_value = 5)
+            Detection_line.__init__(self,image=self.dectect_position.working_frame, blured_value = 5, threshold_1 = 80, threshold_2 = 200)
         canvas_width = 350
         canvas_height = 500
         x_canvas = 50
         y_canvas = 10
         
-        self.actual_width = 914
-        self.actual_height = 1502
+        self.actual_width = 953
+        self.actual_height = 3290
         
         # Create a canvas to display the image
         self.canvas_1 = tk.Canvas(root, width=canvas_width, height=canvas_height, bg='white')
@@ -129,16 +129,24 @@ class main_GUI(Detection_line):
         self.app3 = ImageResizerApp(self.canvas_3, self.edges_image)
         
         
-        
         self.app1.actual_x = None
         self.app1.actual_y = None
         
         # Create a track bar (Scale) to adjust image scale
-        self.scale_var = tk.DoubleVar(value = blured_value)
-        
+        self.blured_var = tk.DoubleVar(value = blured_value)
         self.scale_blur = tk.Scale(self.root, from_=1, to=10, resolution=2, orient=tk.HORIZONTAL, label="Scale", 
-                                  variable=self.scale_var, command=self.update_blured_value, width=15, length=200)
+                                  variable=self.blured_var, command=self.update_blured_value, width=15, length=200)
         self.scale_blur.place(x=50, y=canvas_height+ 30)
+        
+        self.threshold_1_var = tk.DoubleVar(value= threshold_1)
+        self.scale_threshold_1 = tk.Scale(self.root, from_=0, to=255, resolution=1, orient=tk.HORIZONTAL, label="threshold_1", 
+                                  variable=self.threshold_1_var, command=self.update_threshold_1, width=15, length=200)
+        self.scale_threshold_1.place(x=50, y=canvas_height+ 30 + 60)
+        
+        self.threshold_2_var = tk.DoubleVar(value= threshold_2)
+        self.scale_threshold_2 = tk.Scale(self.root, from_=0, to=255, resolution=1, orient=tk.HORIZONTAL, label="threshold_2", 
+                                  variable=self.threshold_2_var, command=self.update_threshold_2, width=15, length=200)
+        self.scale_threshold_2.place(x=50, y=canvas_height+ 30 + 60 + 60)
         
         self.button_curve = tk.Button(master= self.root, text = "curve", bg="white", font= ("Arial",13), command = self.update_curves_image,
                                       width=15, height= 3, cursor="hand2", activebackground= "lightgray", activeforeground= "blue")
@@ -169,10 +177,22 @@ class main_GUI(Detection_line):
         self.update_edges_image()
         self.app3.cv_image = self.edges_image
         self.app3.redraw_image()
+    
+    def update_threshold_1(self, value):
+        self.threshold_1_value = int(value)
+        self.update_edges_image()
+        self.app3.cv_image = self.edges_image
+        self.app3.redraw_image()
+    
+    def update_threshold_2(self, value):
+        self.threshold_2_value = int(value)
+        self.update_edges_image()
+        self.app3.cv_image = self.edges_image
+        self.app3.redraw_image()
 
     def update_edges_image(self):
         self.blured_image = cv2.GaussianBlur(self.gray_image, (self.blured_value, self.blured_value), 0)
-        self.edges_image = cv2.Canny(self.blured_image, 80, 210, apertureSize=3)
+        self.edges_image = cv2.Canny(self.blured_image, self.threshold_1_value, self.threshold_2_value, apertureSize=3)
         
     def calc_Perspective_point(self):
         if (self.app1.actual_x) and (self.app1.actual_y):

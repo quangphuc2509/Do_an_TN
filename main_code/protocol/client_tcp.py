@@ -5,7 +5,7 @@ from time import sleep
 PORT = 55555  
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
-SERVER = '192.168.189.123'
+SERVER = '172.20.16.52'
 ADDR = (SERVER, PORT)
 
 client_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

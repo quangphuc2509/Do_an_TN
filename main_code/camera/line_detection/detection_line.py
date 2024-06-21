@@ -3,13 +3,15 @@ import numpy as np
 import copy
 
 class Detection_line():
-    def __init__(self, image, blured_value):
+    def __init__(self, image, blured_value, threshold_1, threshold_2):
         self.image = image
         self.scale = 0.5
         self.blured_value = blured_value
+        self.threshold_1 = threshold_1
+        self.threshold_2 = threshold_2
         self.gray_image = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)    
         self.blured_image = cv2.GaussianBlur(self.gray_image, (self.blured_value, self.blured_value), 0)
-        self.edges_image = cv2.Canny(self.blured_image, 80, 210, apertureSize=3)
+        self.edges_image = cv2.Canny(self.blured_image, self.threshold_1, self.threshold_2, apertureSize=3)
         
     def cureves_perform(self, first_point_x = None, first_point_y = None):
         self.x_edges_list, self.y_edges_list = self.make_edges_list()

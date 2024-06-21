@@ -1,15 +1,27 @@
 import socket
-import threading
+import time
 
-msgFromclient = "Hello server"
-byteToSend = str.encode(msgFromclient)
-serverAddressPort = ("192.168.0.200", 20001)
-bufferSize = 1024
+def start_client(host, port):
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect((host, port))
 
-clientIP = "192.168.0.200"
-clientPort = 20015
+    try:
+        while True:
+            message = input("Enter message to send: ")
+            if message.lower() == 'exit':
+                break
+            client.send(message.encode('utf-8'))
+            response = client.recv(1024)
+            print(f"Received from server: {response.decode('utf-8')}")
+    except KeyboardInterrupt:
+        pass
+    finally:
+        client.close()
 
-UDPClientSocket = socket.socket(family= socket.AF_INET, type= socket.SOCK_DGRAM)
-UDPClientSocket.bind(clientIP, clientPort)
-
-print ("UDP CLient up and listening")
+if __name__ == "__main__":
+    while True:
+        try:
+            start_client("172.20.16.52", 55555)
+        except ConnectionRefusedError:
+            print("Server is not available, retrying in 5 seconds...")
+            time.sleep(5)

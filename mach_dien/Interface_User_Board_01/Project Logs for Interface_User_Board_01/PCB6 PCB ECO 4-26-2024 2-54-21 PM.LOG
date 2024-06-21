@@ -1,5 +1,0 @@
-Removed Pin From Net: NetName=Den_Warning Pin=P1-12
-Removed Pin From Net: NetName=Den_Run Pin=P1-16
-Added Pin To Net: NetName=Den_Run Pin=P1-12
-Added Pin To Net: NetName=Den_Warning Pin=P1-16
-Added Room: Name=Sheet7

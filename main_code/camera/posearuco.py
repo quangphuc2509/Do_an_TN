@@ -81,7 +81,7 @@ def pose_estimation(frame, aruco_dict_type, matrix_coefficients, distortion_coef
     if len(corners) > 0:
         # rvecs: Vecto chứa giá trị góc xoay của mã aruco với camera
         # tvecs: Vecto chứa giá trị tọa độ của mã aruco tịnh tiến với camera
-        rvecs, tvecs, markerPoints = cv2.aruco.estimatePoseSingleMarkers(corners, 180, matrix_coefficients, distortion_coefficients)
+        rvecs, tvecs, markerPoints = cv2.aruco.estimatePoseSingleMarkers(corners, 160, matrix_coefficients, distortion_coefficients)
         
         # for i in range(len(ids)):
         #     # rvecs, tvecs, markerPoints = cv2.aruco.estimatePoseSingleMarkers(corners[i], 0.032, matrix_coefficients, distortion_coefficients)
@@ -117,7 +117,7 @@ def pose_estimation(frame, aruco_dict_type, matrix_coefficients, distortion_coef
 
     
 
-aruco_type = "DICT_5X5_100"
+aruco_type = "DICT_ARUCO_ORIGINAL"
 
 arucoDict = cv2.aruco.getPredefinedDictionary(ARUCO_DICT[aruco_type])
 

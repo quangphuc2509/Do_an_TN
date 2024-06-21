@@ -8,7 +8,7 @@ import socket
 import threading
 import time
 import random
-
+import select
 
 class First_Gui(tk.Tk):
     end_bit = 0
@@ -26,10 +26,11 @@ class First_Gui(tk.Tk):
         self.working_app.update_working_frame(camera_screen, count)
         
     def send_data(self):
-        # self.thread = threading.Thread(target=self.tcp_app.update_tcp, args=(self.working_app.x_point_mm,))
-        # self.thread.start()
-        self.tcp_app.send_data(self.camera_frame.x_curve_list, self.camera_frame.y_curve_list)
-        self.after(5,self.send_data)
+        if (self.tcp_app.status_send == 0):
+            self.tcp_app.send_data_curve(self.camera_frame.x_curve_list, self.camera_frame.y_curve_list)
+        elif (self.tcp_app.status_send == 1):
+            self.tcp_app.send_data_position(self.working_app.x_point_mm, self.working_app.y_point_mm)
+        self.tcp_app.update_job = self.after(5, self.send_data)
         
 #========================================================================================================================================
 #========================================================================================================================================
@@ -101,7 +102,7 @@ class Camera_frame(tk.Frame):
             self.update_job = self.after(self.delay, self.update)
     
     def Capture(self):
-        url = r"F:\DATN_HK2\camera_img\Anh_Data_02.jpg"
+        url = r"F:\DATN_HK2\camera_img\linearuco.jpg"
         image = cv2.imread(url)
         self.root_1 = tk.Toplevel()
         self.root_1.title("Detect Line")
@@ -220,16 +221,20 @@ class TCP_Protocol_Frame(tk.Frame):
         
         self.FORMAT = 'utf-8'
         self.DISCONNECT_MESSAGE = "!DISCONNECT"
+        self.CONNECT_MESSAGE = "HEARTBEAT"
         self.delay = 5
         self.configure(width = frame_width + frame_width*0.4, height= frame_height)
         self.place(x = frame_position_x, y = frame_position_y)
         self.server_id_variable = tk.StringVar(self)
         self.server_port_variable = tk.StringVar(self)
         self.status_tcp_sys = None
+        self.status_send = None
+        self.update_job = None
         self.create_label()
         self.create_entry()
         self.button_connect = self.create_button("CONNECT", self.connect, 20, 20)
-        self.button_send = self.create_button("SEND", self.master.send_data, 20,80)
+        self.button_send = self.create_button("SEND", self.send_data, 20,80)
+        self.button_print = self.create_button("PRINT", self.print_socket, 120, 80)
     
     def create_label(self):
         self.status_label = tk.Label(self, text="", font= ("Arial",14))
@@ -257,58 +262,88 @@ class TCP_Protocol_Frame(tk.Frame):
         self.server_id_variable.set(str(self.SERVER_ID))
         self.server_port_variable.set(str(self.server_port))
         
-        self.socket_s = socket.socket()
+        self.socket_s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.socket_s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  # Đảm bảo socket có thể tái sử dụng địa chỉ
         self.socket_s.bind((self.SERVER_ID, self.server_port))
         
         self.socket_s.listen()
         self.status_label.config(text="WAITING >>>")
         
-        self.thread = threading.Thread(target=self.update_tcp)
-        self.thread.start()
+        self.accept_thread = threading.Thread(target=self.accept_connections)
+        self.accept_thread.start()
         
-    def update_tcp(self):
-        self.client_socket, self.addr = self.socket_s.accept()
-        self.status_label.config(text="READY")
-    
-    def send_data(self, x_position, y_position):
-        # Initialize end_bit if it does not exist
-        if not hasattr(self, 'end_bit'):
-            self.end_bit = 0
-        if not hasattr(self, 'end_bit_2'):
-            self.end_bit_2 = 0
+    def accept_connections(self):
+        while True:
+            try:
+                self.client_socket, self.addr = self.socket_s.accept()
+                print(f"self.client_socket: {self.client_socket}")
+                self.status_label.config(text="READY")
+                self.client_socket.send(("Ready\n").encode())
+                self.client_thread = threading.Thread(target=self.handle_client, args=(self.client_socket,))
+                self.client_thread.start()
+            except Exception as e:
+                print(f"Error accepting connections: {e}")
+                break
+        
+    def handle_client(self, client_socket):
+        # client_socket.settimeout(1.0)  # Đặt timeout cho socket
+        begin_time = time.time()
+        count = 0
+        while True:
+            try:
+                ready_to_read, _, _ = select.select([client_socket], [], [], 0.1)
+                # print(f"ready_to_read: {ready_to_read} lan {count}")
+                # print(f"ready_to_write: {ready_to_write} lan {count}\n")
+                # if ready_to_write:
+                #     client_socket.send(("connected " + str(count) + "\n").encode())
+                if ready_to_read:
+                    mess = client_socket.recv(1024).decode()
+                    # print(f"\nmess: {mess}")
+                    if self.CONNECT_MESSAGE in mess:
+                        current_time = time.time()
+                        begin_time = current_time
+                        # print(f"truong hop connect")
+                    elif "DONE" in mess:
+                        self.status_send = 2
+                    elif mess == self.DISCONNECT_MESSAGE or not mess:
+                        break
+                    else: 
+                        # print(f"truong hop con lai\n")
+                        pass
+                else:
+                    current_time = time.time()
+                    break_time = current_time - begin_time
+                    # print(f"break time: {break_time}")
+                    if(break_time > 3):
+                        break
+            except socket.timeout:
+                # Xử lý timeout: ngắt kết nối nếu client không phản hồi trong khoảng thời gian cho phép
+                print("Client connection timed out")
+                break
+            except ConnectionResetError:
+                print("Connection was forcibly closed by the client")
+                break
+            except Exception as e:
+                print(f"Error handling client: {e}")
+                break
             
-        if self.end_bit == 0:
-            print(f"x_position: {x_position}")
-            for i in range(len(x_position)):
-                print(f"Do_dai: {len(x_position)}")
-                print(f"STT: {i}")
-                
-                x_send = self.convert_to_scientific_notation(x_position[i])
-                y_send = self.convert_to_scientific_notation(y_position[i])
-                # self.client_socket.send(x_send.encode())
-                # self.client_socket.send(y_send.encode())
-                self.client_socket.send(('x' + str(x_position[i]) + '\n').encode())
-                self.client_socket.send(('y' + str(y_position[i]) + '\n').encode())
-            self.end_bit = 1
-        elif self.end_bit == 1:
-            if self.end_bit_2 == 0:
-                self.client_socket.send(('m' + str(0) + '\n').encode())
-                self.client_socket.send(('n' + str(0) + '\n').encode())
-                self.end_bit_2 = 1
-            # else:
-            #     print("Done")
-            #     print(f"Do_dai: {len(x_position)}")
+        client_socket.close()
+        self.status_label.config(text= "DISCONNECTED")
+        if self.update_job:
+            self.after_cancel(self.master.send_data)
+            self.update_job = None
+        
+    def print_socket(self):
+        if not hasattr(self,"client_socket"):
+            print(f"khong co bien client_socket")
+        else:
+            print(f"self.client_socket: {self.client_socket}")
             
-            # print(f"count: {count}")
-        #     msg = self.client_socket.recv(1024).decode(self.FORMAT)
-        #     if msg == self.DISCONNECT_MESSAGE:
-        #         connected = False 
-            
-        #     print(f"[{self.addr}] {msg}")
-        #     print(len(msg))
-        #     message = msg
-        #     self.client_socket.send(message.encode(self.FORMAT))
-            
+    def send_data(self):
+        self.status_send = 0
+        self.master.send_data()
+        
+        
     def twos_complement(self, binary_str):
         # Nếu đầu vào không đủ 32 bit, bổ sung số 0 vào trước chuỗi nhị phân
         binary_str = binary_str.zfill(32)
@@ -358,6 +393,44 @@ class TCP_Protocol_Frame(tk.Frame):
             # Ghép chuỗi nhị phân của x_value và exponent lại với nhau và thêm 'b' vào đầu
             combined_binary = x_binary + exponent_binary + '\n'
         return combined_binary
+    
+    def send_data_curve(self, x_position, y_position):
+        # Initialize end_bit if it does not exist
+        if not hasattr(self, 'end_bit'):
+            self.end_bit = 0
+            
+        if not hasattr(self, 'end_bit_2'):
+            self.end_bit_2 = 0
+            
+        if self.end_bit == 0:
+            # print(f"x_position: {x_position}")
+            for i in range(len(x_position)):
+                print(f"Do_dai: {len(x_position)}")
+                print(f"STT: {i}")
+                x_send = self.convert_to_scientific_notation(x_position[i])
+                y_send = self.convert_to_scientific_notation(y_position[i])
+                # self.client_socket.send(x_send.encode())
+                # self.client_socket.send(y_send.encode())
+                self.client_socket.send(('x' + str(x_position[i]) + '\n').encode())
+                self.client_socket.send(('y' + str(y_position[i]) + '\n').encode())
+                time.sleep(0.02)
+            self.end_bit = 1
+            print(f"gui data curve")
+        elif self.end_bit == 1:
+            if self.end_bit_2 == 0:
+                self.client_socket.send(('m' + str(0) + '\n').encode())
+                self.client_socket.send(('n' + str(0) + '\n').encode())
+                self.end_bit = 0
+                self.status_send = 1
+                print(f"self.tcp_app.status_send: {self.status_send}")
+            
+                
+    def send_data_position(self, x_position, y_position):
+        x_send = self.convert_to_scientific_notation(x_position)
+        y_send = self.convert_to_scientific_notation(y_position)
+        # self.client_socket.send(('x' + str(x_position) + '\n').encode())
+        # self.client_socket.send(('y' + str(y_position) + '\n').encode())
+        print(f"gui data_position")
         
 if __name__ == "__main__":
     app = First_Gui("man hinh chinh", "zoomed")

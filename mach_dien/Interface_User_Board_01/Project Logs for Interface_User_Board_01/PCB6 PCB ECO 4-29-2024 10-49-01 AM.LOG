@@ -1,7 +1,0 @@
-Added Component: Designator=*(PCBComponent_1)
-Added Pin To Net: NetName=VCC Pin=*-2
-Added Pin To Net: NetName=GND Pin=*-3
-Added Pin To Net: NetName=RX_HC05 Pin=*-4
-Added Pin To Net: NetName=TX_HC05 Pin=*-5
-Added Member To Class: ClassName=Sheet7 Member=Component * Component_1
-Added Room: Name=Sheet7
